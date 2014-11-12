@@ -47,7 +47,7 @@ struct tree* append( struct tree *start, struct tree *end)
 
 void join( struct tree *node1, struct tree *node2)
 {
-    node1->large = node2;
-    node2->small = node1;
+    node1->right = node2;
+    node2->left = node1;
 }
 
