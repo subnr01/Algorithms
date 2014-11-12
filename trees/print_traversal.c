@@ -9,4 +9,15 @@ void postorder_traversal( struct tree * node)
         postorder_traversal (node->right);
         print (node->data);
     }
+}
 
+void preorder( struct node *tree)
+{
+    if (!node) {
+        return;
+    }else {
+        print(node->data);
+        preoder(node->left);
+        preorder(node->right);
+    }
+}
