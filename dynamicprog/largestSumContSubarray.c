@@ -3,49 +3,28 @@
 C program to find largest sum of contigous subarray
 using kadane's algorithm
 
-Kadane’s Algorithm:
-
-Initialize:
-    max_so_far = 0
-    max_ending_here = 0
-
-Loop for each element of the array
-  (a) max_ending_here = max_ending_here + a[i]
-  (b) if(max_ending_here < 0)
-            max_ending_here = 0
-  (c) if(max_so_far < max_ending_here)
-            max_so_far = max_ending_here
-return max_so_far
-
-
+def max_subarray(A):
+    max_ending_here = max_so_far = A[0]
+    for x in A[1:]:
+        max_ending_here = max(x, max_ending_here + x)
+        max_so_far = max(max_so_far, max_ending_here)
+    return max_so_far
 
 */
 
-int maxSubArraySum(int a[], int size)
+int maxSubArraySum(int a[], int n)
 {
-   int max_so_far = 0, max_ending_here = 0;
-   int i;
-   for(i = 0; i < size; i++)
-   {
-     max_ending_here = max_ending_here + a[i];
-    
-     if(max_ending_here < 0)
-        max_ending_here = 0;
+    int sum;
 
+    max_sum = a[0];
+    curr_sum = a[0];
 
-     else if(max_so_far < max_ending_here)
-        max_so_far = max_ending_here;
-    
+    for( int i = 1; i < n ; i++)
+    {
+        curr_sum = max(a[i], a[i] + curr_sum);
+        max_sum = max(curr_sum, max_sum);
+
     }
-    return max_so_far;
+    return max_sum;
 } 
-
-
-/*
-The algorithm does not work 
-if all the elements in the
-array are negative numbers
-
-*/
-
 
