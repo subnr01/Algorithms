@@ -1,0 +1,12 @@
+AreAllFramesFull	lru.c	/^int AreAllFramesFull( Queue* queue )$/
+Enqueue	lru.c	/^void Enqueue( Queue* queue, Hash* hash, unsigned p/
+Mlru	lru.c	/^int main()$/
+Node	lru.c	/^\/\/ A Queue Node (Queue is implemented using Doub/
+Queue	lru.c	/^\/\/ A Queue (A FIFO collection of Queue Nodes)$/
+ReferencePage	lru.c	/^void ReferencePage( Queue* queue, Hash* hash, unsi/
+createHash	lru.c	/^Hash* createHash( int capacity )$/
+createQueue	lru.c	/^Queue* createQueue( int numberOfFrames )$/
+deQueue	lru.c	/^void deQueue( Queue* queue )$/
+hash	lru.c	/^\/\/ A hash (Collection of pointers to Queue Nodes/
+isQueueEmpty	lru.c	/^int isQueueEmpty( Queue* queue )$/
+newQNode	lru.c	/^QNode* newQNode( unsigned pageNumber )$/
