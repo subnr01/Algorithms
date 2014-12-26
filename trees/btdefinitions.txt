@@ -1,0 +1,15 @@
+
+Binary tree
+Definition: a binary tree T is full if
+each node is either a leaf or
+possesses exactly two child
+nodes.
+
+
+Complete binary tree
+Definition: a binary tree T with n
+levels is complete if all
+levels except possibly the
+last are completely full,
+and the last level has all its
+nodes to the left side.
