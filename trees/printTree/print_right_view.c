@@ -42,3 +42,4 @@ void rightView(struct Node *root)
     int max_level = 0;
     rightViewUtil(root, 1, &max_level);
 }
+
