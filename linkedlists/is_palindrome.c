@@ -25,3 +25,24 @@ This method takes O(n) time and O(1) extra space.
 
 
 */
+
+
+int ispalindrome_rev(struct node **first, struct node *last)
+{
+
+        if ( !last) {
+                return 1;
+        }
+
+        if (!ispalindrome_rev(first, last->next))
+                return 0;
+
+        if ( last->data == (*first)->data) {
+                (*first) = (*first)->next;
+                return 1;
+        }
+        else {
+                return 0;
+        }
+}
+
