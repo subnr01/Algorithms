@@ -1,5 +1,6 @@
 /*
-Given a Binary Tree, convert it to a Binary Search Tree. The conversion must be done in such a way that keeps the original structure of Binary Tree.
+Given a Binary Tree, convert it to a Binary Search Tree. The conversion must be done in such a way that 
+keeps the original structure of Binary Tree.
 
 Examples.
 
@@ -23,7 +24,9 @@ Output:
 
 Following is a 3 step solution for converting Binary tree to Binary Search Tree.
 1) Create a temp array arr[] that stores inorder traversal of the tree. This step takes O(n) time.
-2) Sort the temp array arr[]. Time complexity of this step depends upon the sorting algorithm. In the following implementation, Quick Sort is used which takes (n^2) time. This can be done in O(nLogn) time using Heap Sort or Merge Sort.
+2) Sort the temp array arr[]. Time complexity of this step depends upon the sorting algorithm. In the following
+   implementation, Quick Sort is used which takes (n^2) time. This can be done in O(nLogn) time using
+   Heap Sort or Merge Sort.
 3) Again do inorder traversal of tree and copy array elements to tree nodes one by one. This step takes O(n) time.
 
 
