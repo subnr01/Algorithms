@@ -1,48 +1,51 @@
+METHOD 1(USing height) O(n2)
 
-void levelOrderTraversal ( struct tree *node)
+
+void printLevelOrder(struct node* root)
 {
-	if (!node)
-		return;
+  int h = height(root);
+  int i;
+  for(i=1; i<=h; i++)
+    printGivenLevel(root, i);
+}   
 
-	int height;
-
-	height = height(node);
-
-
-	for (i to height)
-	{
-		level(node,i)
-	}
-}
-
-void level ( struct tree* node, int p)
+void printGivenLevel(struct node* root, int level)
 {
-	if (p == 0) {
-		print node->data;
-		return;
-	} 	
-	level(node->left, p--);
-	level(node->right, p++);
-}	
-
-
-
-//Using stack and queue
-void printLevelOrder(BinaryTree *root) {
-  if (!root) return;
-  queue<BinaryTree*> currentLevel, nextLevel;
-  currentLevel.push(root);
-  while (!currentLevel.empty()) {
-    BinaryTree *currNode = currentLevel.front();
-    currentLevel.pop();
-    if (currNode) {
-      cout << currNode->data << " ";
-      nextLevel.push(currNode->left);
-      nextLevel.push(currNode->right);
-    }
-    if (currentLevel.empty()) {
-      cout << endl;
-      swap(currentLevel, nextLevel);
-    }
+  if(root == NULL)
+    return;
+  if(level == 1)
+    printf("%d ", root->data);
+  else if (level > 1)
+  {
+    printGivenLevel(root->left, level-1);
+    printGivenLevel(root->right, level-1);
   }
 }
+
+Method 2 (Using queue)
+
+/* Given a binary tree, print its nodes in level order
+   using array for implementing queue */
+void printLevelOrder(struct node* root)
+{
+  int rear, front;
+  struct node **queue = createQueue(&front, &rear);  
+  struct node *temp_node = root; 
+ 
+  while(temp_node)
+  {
+    printf("%d ", temp_node->data);
+ 
+    /*Enqueue left child */
+    if(temp_node->left)
+      enQueue(queue, &rear, temp_node->left);
+ 
+    /*Enqueue right child */
+    if(temp_node->right)
+      enQueue(queue, &rear, temp_node->right);
+ 
+    /*Dequeue node and make it temp_node*/
+    temp_node = deQueue(queue, &front);
+  }
+}
+
