@@ -13,6 +13,17 @@ For the following input tree, output should be 9, 19, 42.
   10  11  12 7
 */
 
+/*
+
+The idea is to keep track of vertical distance from top diagonal passing through root. We increment the
+vertical distance we go down to next diagonal.
+1. Add root with vertical distance as 0 to the queue.
+2. Process the sum of all right child and right of right child and so on.
+3. Add left child current node into the queue for later processing. The vertical distance of left child is 
+   vertical distance of current node plus 1.
+4. Keep doing 2nd, 3rd and 4th step till the queue is empty.
+
+*/
 
  // Diagonal sum method
     public void diagonalSum()
