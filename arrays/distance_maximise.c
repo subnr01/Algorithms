@@ -117,3 +117,14 @@ i = i+1;
 return maxDiff; 
 
 
+
+/* 
+ * Another soluton 
+
+
+1. Build a tree containing value and index
+2. When inserting a right leaf, update its j
+3. Compare the index difference of i and j, which can be done in the process of building tree
+*/
+
+
