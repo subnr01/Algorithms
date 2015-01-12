@@ -77,3 +77,21 @@ void correctBSTUtil( struct node* root, struct node** first,
         correctBSTUtil( root->right, first, middle, last, prev );
     }
 }
+
+void correctBST( struct node* root )
+{
+    // Initialize pointers needed for correctBSTUtil()
+    struct node *first, *middle, *last, *prev;
+    first = middle = last = prev = NULL;
+ 
+    // Set the poiters to find out two nodes
+    correctBSTUtil( root, &first, &middle, &last, &prev );
+ 
+    // Fix (or correct) the tree
+    if( first && last )
+        swap( &(first->data), &(last->data) );
+    else if( first && middle ) // Adjacent nodes swapped
+        swap( &(first->data), &(middle->data) );
+ 
+    // else nodes have not been swapped, passed tree is really BST.
+}
