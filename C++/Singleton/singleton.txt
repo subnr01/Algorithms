@@ -1,2 +1,7 @@
 
-Only one object
+
+Create only one instance of a family
+
+1. Declaring a global object is not good OO design as it goes against encapsulation.
+2. A static class ( functions and members) not good OO.
+3. Singleton pattern comes to rescue
