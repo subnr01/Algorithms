@@ -5,3 +5,4 @@ n=n>>1 //Right shift by 1
 } 
 return count 
 
+
