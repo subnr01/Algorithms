@@ -1,0 +1,26 @@
+
+
+Why paging is used?
+Paging is solution to external fragmentation problem which is to permit the logical address space of a process to be noncontiguous, thus allowing a process to be allocating physical memory wherever the latter is available.
+
+
+What is starvation and aging?
+Starvation: Starvation is a resource management problem where a process does not get the resources it needs for a long time because the resources are being allocated to other processes.
+Aging: Aging is a technique to avoid starvation in a scheduling system. It works by adding an aging factor to the priority of each request. The aging factor must increase the request’s priority as time passes and must ensure that a request will eventually be the highest priority request (after it has waited long enough)
+
+
+
+When can deadlock occur?
+Deadlock can arise if four conditions hold simultaneously.
+Mutual exclusion: only one process at a time can use a resource.
+Hold and wait: a process holding at least one resource is waiting to acquire additional resources held by other processes.
+No preemption: a resource can be released only voluntarily by the process holding it, after that process has completed its task.
+Circular wait: there exists a set {P0, P1, …, P0} of waiting processes such that P0 is waiting for a resource that is held by P1, P1 is waiting for a resource that is held by P2, …, Pn–1 is waiting for a resource that is held by Pn, and P0 is waiting for a resource that is held by P0.
+
+
+What are the Methods for Handling Deadlocks?
+->Ensure that the system will never enter a deadlock state.
+->Allow the system to enter a deadlock state and then recover.
+->Ignore the problem and pretend that deadlocks never occur in the system; 
+  used by most operating systems, including UNIX.
+
