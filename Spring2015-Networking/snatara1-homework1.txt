@@ -1,0 +1,160 @@
+Name: Subramanian Natarjan
+Andrew ID: snatara1
+
+
+
+1. Calculate the total time required to transfer a 1000-KB file between two hosts
+connected by a link that support packets of size 1 KB in the following cases. You
+can assume that the sum of processing delay, queuing delay and propagation delay
+to send a packet from one host to the other is 25 ms.
+
+a. The bandwidth of the link is 1.5 Mbps and data packets can be sent
+continuously without waiting for any acknowledgment from the other host
+that the packets were received without any errors. (4 points)
+
+b. The bandwidth of the link is 1.5 Mbps and the sending host can send the
+next packet only after receiving an acknowledgment from the receiving
+host that the previous packet was received error-free. For the purpose of
+this problem, assume that all packets are received without any errors and
+acknowledgment packet size is negligible (no transmission delays). (4 points)
+
+c. The bandwidth is “infinite” and the sending host can send up to 19 next
+packets while it is waiting to receive an acknowledgment from the
+receiving host for a particular packet. (6 points)
+
+d. The bandwidth is “infinite” and the sending host can send (22-1) packets
+after receiving the acknowledgment for the first packet, send (23-1 )
+additional packets after receiving the acknowledgment for the packets sent
+in the previous step, (24-1 ) additional packets after receiving the
+acknowledgment for the packets sent in the previous step and so on…(a
+justification for exponential increase will be provided when discussing
+transport protocols in the course). (6 points) 
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------
+
+2. The motivation behind this problem is to quantitatively evaluate the advantages of
+packet switching over circuit switching. You will need to know and remember
+basic probability theory (specifically binomial distribution, normal distribution)
+and are welcome to use (and cite) other sources to solve this problem. To solve
+this problem first, we will compute probabilities of coin tosses and apply the
+result to the circuit switching/packet switching debate.
+
+a. When tossed, an unfair coin lands as “Heads” with probability p and lands
+as “Tails” with probability 1-p. 
+
+	i. If this coin is tossed 10 times, what is the probability of obtaining
+	the following sequence of heads (H) and tails (T) –
+	HTTTHHTTTT? (2 points)
+
+	ii. If this coin is tossed 10 times, what is the probability of obtaining
+	exactly three “Heads”? (3 points)
+
+	iii.If this coin is tossed 10 times, what is the probability of obtaining
+	at least three “Heads”? (5 points)
+
+	iv. What is the “Normal approximation” to the Binomial distribution?
+	You are free to use other sources for this as long as you cite it. (5
+	points) 
+
+------------------------------------------------------------------------------------------------------------------
+
+b. Assume you are given a 1 Mbps link that is to be shared amongst a set of
+users in an institution to connect their computers. Assume that each users
+data rate is 100 kbps and each user actively uses the link for 10% of the
+time.
+
+	i. How many users can be supported if we use circuit switching over
+	this link? (5 points)
+
+	ii. Assume that your institution decides to use packet switching and
+	decides to share the link amongst 50 users. What is the probability
+	that more than 10 users are active at any time? (Hint: Determine
+	the probability in the form you determined in 2.a.iii and then apply
+	the results from 2.a.iv to compute the probability). (10 points)
+
+------------------------------------------------------------------------------------------------------------------
+
+3. Suppose N packets arrive simultaneously to a link at which no packets are
+currently being transmitted or queued. Each packet is of length L bytes and the
+link has a transmission rate R. What is the average queuing delay for the N
+packets? (10 points) 
+
+------------------------------------------------------------------------------------------------------------------
+
+4. Suppose packets can be dropped or arbitrarily delayed inside a packet network.
+Two users who use this network are required to terminate their session by telling
+each other that they are ending the session. We would like to design a session
+termination protocol that exchanges packets in such a way that both users know
+that they can terminate and no further packets will arrive from this user or the 
+other user? Can such a protocol be designed? If yes, provide a specification of
+your protocol. If no, explain clearly the reason why such a protocol cannot be
+designed. (15 points)
+
+------------------------------------------------------------------------------------------------------------------
+
+5. Networking utilities whois, traceroute and ping. You will need access to a
+Unix machine for the following problem. If you can’t find anything else, you can
+always use the Andrew Unix machines (e.g. unix.andrew.cmu.edu) for this
+problem. (25 points)
+
+a. The Unix utility whois can be used to find the domain name
+corresponding to an organization, or vice versa. The information is
+provided by a domain name registration service provider. Read the man
+page for whois and experiment with it. For example, try whois
+disney.com. The response should tell you that disney.com is
+registered on the server whois.melbourneit.com owned by
+MELBOURNE IT. To probe further try whois –h
+whois.melbourneit.com cnet.com. Try whois
+stanford.edu and whois mit.edu as well. Here is what you need
+to turn in
+
+	i.Provide the name of the technical contact for the domain
+	cmu.edu and disney.com
+
+	ii. Give both the English language names and the internet addresses
+	of all nameservers for disney.com. 
+
+
+
+
+b. The Unix utility ping can be used to find the round trip time (RTT) to
+various Internet hosts. See the man page for ping to learn how to use
+ping and its various options. The options can be used to control the time
+between ping packet transmissions, and to display the resulting round
+trip times. When the execution of ping is interrupted, the min, average
+and maximum RTT are displayed by the utility. Here is what you turn in
+
+	i. Report the average (average over five pings) round trip times
+	for pings to one of the nameservers for mit.edu and for
+	stanford.edu. If there are multiple nameservers for a domain,
+	use the first one listed. List the nameserver that you used for
+	computing the RTT time.
+
+
+
+c. The Unix utility traceroute is like ping, but it sends packets that are
+limited to go one hop, then two hops, then three hops, and so on, towards
+a given destination, and the intermediate routers are reported. Read the 
+man page for traceroute and experiment with it.
+
+	i. Try traceroute to the nameserver to standford.edu. Use
+	the traceroute options so that delays are reported for 5
+	packets. How do the delays reported by traceroute compare to
+	the delays reported by ping. Attach a printout of your output (no
+	more than 1 page even if you have to truncate it).
+	ii. Try traceroute to the nameserver to mit.edu. Use the
+	traceroute options so that delays are reported for 5 packets.
+	List the name and IP address of the 5th router encountered. How do
+	the delays reported by traceroute compare to the delays
+	reported by ping. (No need to attach any outputs for this
+	problem). 
+
+
+
+
+------------------------------------------------------------------------------------------------------------------
+
