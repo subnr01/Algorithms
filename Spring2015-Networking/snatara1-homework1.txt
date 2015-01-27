@@ -12,11 +12,13 @@ a. The bandwidth of the link is 1.5 Mbps and data packets can be sent
 continuously without waiting for any acknowledgment from the other host
 that the packets were received without any errors. (4 points)
 
+
 b. The bandwidth of the link is 1.5 Mbps and the sending host can send the
 next packet only after receiving an acknowledgment from the receiving
 host that the previous packet was received error-free. For the purpose of
 this problem, assume that all packets are received without any errors and
 acknowledgment packet size is negligible (no transmission delays). (4 points)
+
 
 c. The bandwidth is “infinite” and the sending host can send up to 19 next
 packets while it is waiting to receive an acknowledgment from the
@@ -31,8 +33,52 @@ justification for exponential increase will be provided when discussing
 transport protocols in the course). (6 points) 
 
 
+Solution:
+1a:
+1000 packets can be sent. 
+Transmission time = (1000 * 2^10) * 8/(1.5 * 10^6) = 5.46 seconds
+
+Total transmission time  + delay = 5.46 + 0.025 = 5.485 seconds
+
+Answer = 5.485 seconds
+
+1b:
+Transmission time = 
+(1000 * 2^10) * 8/(1.5 * 10^6) + 999 * 0.05 (rtt) + (first packet delay))0.025  
+
+= 5.46 + 49.95 + 0.025
+
+= 55.435 seconds
+
+1c:
+Transmission time is 0 as bandwidth is infinite.
+
+But for 20 packets, delay is 0.025 seconds.
+And there is a wait for ack = 0.025 seconds.
+
+So the above delay and wait for ack is for every 20 packets.
+
+Since there are 1000 packets to be sent,
+total transimission time is 
+= 50 * 0.025 + 50 * 0.025
+= 2.5 seconds
 
 
+1d:
+
+
+Since packets increase exponentially after every transimission, 
+we have to find the min attempts to transfer 1000 packets
+which is given by
+log2(1000) = 10
+
+So every group there is a RTT of 0.025 seconds except for the 
+first group which has a delay of 0.025 seconds
+
+So transimission time 
+= 0.025 + 9 * 0.05
+= 0.025 + 0.45
+= 0.475 seconds
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -60,7 +106,6 @@ as “Tails” with probability 1-p.
 	You are free to use other sources for this as long as you cite it. (5
 	points) 
 
-------------------------------------------------------------------------------------------------------------------
 
 b. Assume you are given a 1 Mbps link that is to be shared amongst a set of
 users in an institution to connect their computers. Assume that each users
@@ -76,12 +121,52 @@ time.
 	the probability in the form you determined in 2.a.iii and then apply
 	the results from 2.a.iv to compute the probability). (10 points)
 
+
+Solution:
+
+2a)
+
+i) Probability of obtaining the combination HTTTHHTTTT:
+	= (p ^3) * ((1-p)^7)
+
+ii) Probability of obtaining exactly three heads:
+	= 10C3 * ((p ^3) * ((1-p)^7)) 
+
+iii) Probability of obtaining atleast 3 heads
+	= 1 - ( Σ (02) (10C2 * ((p ^2) * ((1-p)^8))))
+
+iv) Normal approximation
+
+
+
+2b)
+i) 1 Mbps/100kbps = 10 users
+
+ii)
+= 1 - (Σ (09)(50C9 * (p^9) * (1-p)^41)) where p = 0.1
+
+
 ------------------------------------------------------------------------------------------------------------------
 
 3. Suppose N packets arrive simultaneously to a link at which no packets are
 currently being transmitted or queued. Each packet is of length L bytes and the
 link has a transmission rate R. What is the average queuing delay for the N
 packets? (10 points) 
+
+
+Solution:
+For the first packet the queueing delay will be 0. 
+The  queueing delay  for the second packet will be L/R.
+The queueing delay for the third packet will be L/R + L/R = 2(L/R)
+In the same way the queueing delay for the fourth packet will be = L/R + L/R + L/R = 3(L/R)
+So the queueing delay for the nth packet will be (n-1)L/R
+
+So total delay for all packets will be 
+
+= L/R (1) + L/R (2) + L/R (3) +.....+ (n-1)L/R
+= L/R (n-1)/2
+= L(n-1)/2R 
+
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -93,6 +178,9 @@ that they can terminate and no further packets will arrive from this user or the
 other user? Can such a protocol be designed? If yes, provide a specification of
 your protocol. If no, explain clearly the reason why such a protocol cannot be
 designed. (15 points)
+
+
+
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -117,7 +205,6 @@ to turn in
 
 	ii. Give both the English language names and the internet addresses
 	of all nameservers for disney.com. 
-
 
 
 
@@ -146,6 +233,7 @@ man page for traceroute and experiment with it.
 	packets. How do the delays reported by traceroute compare to
 	the delays reported by ping. Attach a printout of your output (no
 	more than 1 page even if you have to truncate it).
+
 	ii. Try traceroute to the nameserver to mit.edu. Use the
 	traceroute options so that delays are reported for 5 packets.
 	List the name and IP address of the 5th router encountered. How do
@@ -155,6 +243,70 @@ man page for traceroute and experiment with it.
 
 
 
+Solution:
+----------
+
+5a i)
+Technical contact name for cmu.edu     : 
+Technical Contact:
+   Host Master
+   Carnegie Mellon University
+   Cyert Hall 215
+   5000 Forbes Ave
+   Pittsburgh, PA 15213-3890
+   UNITED STATES
+   +1 412 268 4357
+   host-master@andrew.cmu.edu 
+
+
+Technical contact name for disney.com  :
+Registrant Name: Disney Enterprises, Inc.
+Registrant Organization: Disney Enterprises, Inc.
+Registrant Street: 500 South Buena Street
+Registrant City: Burbank
+Registrant State/Province: CA
+Registrant Postal Code: 91521
+Registrant Country: US
+Registrant Phone: +1.8669936263
+Registrant Phone Ext:
+Registrant Fax: +1.8669936263
+Registrant Fax Ext:
+Registrant Email: corp.dns.domains@disney.com
+
+
+5a ii)
+Names 								IP addresses
+Name Server: huey.disney.com   		204.128.192.10	
+Name Server: huey11.disney.com      192.195.66.12
+Name Server: sens02.dig.com         139.104.186.14 
+Name Server: sens01.dig.com         139.104.186.13         
+
+
+5b i)
+
+For stanford.edu
+ARGUS.STANFORD.EDU
+Average rtt over five pings: 85.323
+
+5c i)
+[snatara1@unix3 ~]$ traceroute ARGUS.STANFORD.EDU -q 5
+traceroute to ARGUS.STANFORD.EDU (171.64.7.115), 30 hops max, 60 byte packets
+ 1  POD-D-CYH-VL141.GW.CMU.NET (128.2.13.130)  1.060 ms  1.102 ms  1.334 ms  1.356 ms  1.439 ms
+ 2  CORE255-POD-D-CYH.GW.CMU.NET (128.2.255.201)  5.033 ms  5.127 ms  5.234 ms  5.276 ms  5.352 ms
+ 3  POD-I-NH-VL987.GW.CMU.NET (128.2.255.251)  0.644 ms  0.711 ms  0.767 ms POD-I-CYH-VL987.GW.CMU.NET (128.2.255.250)  0.700 ms  0.704 ms
+ 4  re-rtr.cmu.3rox.net (147.73.16.97)  0.513 ms  0.415 ms  0.418 ms  0.403 ms  0.460 ms
+ 5  internet2-wash-3rox.net.internet2.edu (192.88.115.83)  6.426 ms  6.507 ms  6.641 ms  6.619 ms  6.614 ms
+ 6  et-5-0-0.104.rtr.atla.net.internet2.edu (198.71.45.6)  20.074 ms  20.095 ms  20.065 ms  19.998 ms  19.973 ms
+ 7  et-10-2-0.105.rtr.hous.net.internet2.edu (198.71.45.13)  43.871 ms  43.604 ms  43.893 ms  43.849 ms  43.812 ms
+ 8  et-5-0-0.111.rtr.losa.net.internet2.edu (198.71.45.21)  76.262 ms  76.106 ms  76.358 ms  76.175 ms  76.173 ms
+ 9  137.164.26.200 (137.164.26.200)  76.351 ms  76.522 ms  76.489 ms  76.483 ms  76.621 ms
+10  svl-hpr2--lax-hpr2-10g.cenic.net (137.164.25.38)  84.583 ms  84.632 ms  84.415 ms  84.591 ms svl-hpr2--lax-hpr2-10g-2.cenic.net (137.164.25.50)  84.409 ms
+11  hpr-stanford--svl-hpr2-10ge.cenic.net (137.164.27.62)  85.064 ms  85.342 ms  85.508 ms  85.441 ms  85.414 ms
+12  east-rtr-po8-9.SUNet (171.66.255.195)  88.346 ms  85.539 ms  85.897 ms  86.023 ms  85.657 ms
+13  argus-4.stanford.edu (171.64.7.115)  84.933 ms  84.914 ms  84.929 ms  84.917 ms  84.914 ms
+[snatara1@unix3 ~]$
+
+5c ii)
 
 ------------------------------------------------------------------------------------------------------------------
 
