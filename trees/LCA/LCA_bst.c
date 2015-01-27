@@ -12,26 +12,41 @@ int LCA ( struct tree *node, int elem1, int elem2)
 	 4. Root is lesser than both elements. 
 	 */
 
-	 if (!node || elem1 == node->data || elem2 == node->data)
-	 	return -1;
-
-	 if( !node->left  && (node->left->data == elem1 || node->left->data == elem2)	)
-	 	return node->data
-
-
-	 if( !node->right  && (node->right->data == elem1 || node->right->data == elem2)	)
-	 	return node->data
-	 
-     
-     if ( elem1 > node->data || elem2 < node->data)
-     	return node->data
-
-     if ( node->data > elem2 && node->data > elem1) 
-     		return LCA(node->left, elem1, elem2)
-
-
-	if ( node->data < elem2 && node->data < elem1) 
-     		return LCA(node->right, elem1, elem2)
+	  if (root == NULL) return NULL;
+ 
+    // If both n1 and n2 are smaller than root, then LCA lies in left
+    if (root->data > n1 && root->data > n2)
+        return lca(root->left, n1, n2);
+ 
+    // If both n1 and n2 are greater than root, then LCA lies in right
+    if (root->data < n1 && root->data < n2)
+        return lca(root->right, n1, n2);
+ 
+    return root;
     
-}	
+}
+
+
+
+/* Function to find LCA of n1 and n2. The function assumes that both
+   n1 and n2 are present in BST */
+struct node *lca(struct node* root, int n1, int n2)
+{
+    while (root != NULL)
+    {
+         // If both n1 and n2 are smaller than root, then LCA lies in left
+        if (root->data > n1 && root->data > n2)
+           root = root->left;
+ 
+        // If both n1 and n2 are greater than root, then LCA lies in right
+        else if (root->data < n1 && root->data < n2)
+           root = root->right;
+ 
+        else break;
+    }
+    return root;
+}
+
+
+
 
