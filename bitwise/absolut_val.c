@@ -9,3 +9,5 @@ int const mask = v >> sizeof(int) * CHAR_BIT - 1;
 r = (v + mask) ^ mask; 
 
 
+//When you right shift a negative number 31 times, then resultant value is -1.
+
