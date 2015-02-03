@@ -19,7 +19,12 @@ Otherwise, x ^ y is 1 and (0,1) XOR 1 is (1,0)
 
 int swap(int num, int i, int j)
 {
+ 
+ //Take the ith bit and the jth bit XOR it.
+ //Use AND to preserve the result.
  int xor = ((num>>i) ^ (num>>j)) & 1;
+ 
+ /* Now XOR the number with the ith bit in place and jth bit in place */
  return num ^ (xor<<i) ^ (xor<<j);
 }
 
