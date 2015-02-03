@@ -17,6 +17,6 @@ bit is 1, then the value of (x^y)>>31 will be 1, otherwise 0.
 
 bool oppositeSigns(int x, int y)
 {
-    return ((x ^ y) >> 31);
+    return ((x ^ y) >> 31); //get the sign bit of the result.if it is 1 then that means one of the numbers was zero, so opposite
 }
 
