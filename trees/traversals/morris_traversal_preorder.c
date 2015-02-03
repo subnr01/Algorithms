@@ -25,39 +25,39 @@ data and move to left child of current node.
 
 
 // Preorder traversal without recursion and without stack
-void morrisTraversalPreorder(struct node* root)
+void morrisTraversalPreorder(struct node* current)
 {
-    while (root)
+    while (current)
     {
         // If left child is null, print the current node data. Move to
         // right child.
-        if (root->left == NULL)
+        if (current->left == NULL)
         {
-            printf( "%d ", root->data );
-            root = root->right;
+            printf( "%d ", current->data );
+            current = current->right;
         }
         else
         {
             // Find inorder predecessor
-            struct node* current = root->left;
-            while (current->right && current->right != root)
-                current = current->right;
+            struct node* pre = current->left;
+            while (pre->right && pre->right != current)
+                pre = pre->right;
  
             // If the right child of inorder predecessor already points to
             // this node
-            if (current->right == root)
+            if (pre->right == current)
             {
-                current->right = NULL;
-                root = root->right;
+                pre->right = NULL;
+                root = current->right;
             }
  
             // If right child doesn't point to this node, then print this
             // node and make right child point to this node
             else
             {
-                printf("%d ", root->data);
-                current->right = root;
-                root = root->left;
+                printf("%d ", current->data);
+                pre->right = current;
+                current = current->left;
             }
         }
     }
