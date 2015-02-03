@@ -1,5 +1,6 @@
 /*
-Write a function to connect all the adjacent nodes at the same level in a binary tree. Structure of the given Binary Tree node is like following.
+Write a function to connect all the adjacent nodes at the same level in a binary tree. 
+Structure of the given Binary Tree node is like following.
 
 struct node {
   int data;
@@ -7,7 +8,8 @@ struct node {
   struct node* right;
   struct node* nextRight;
 }
-Initially, all the nextRight pointers point to garbage values. Your function should set these pointers to point next right for each node. You can use only constant extra space.
+Initially, all the nextRight pointers point to garbage values. Your function should set
+these pointers to point next right for each node. You can use only constant extra space.
 
 Example
 
