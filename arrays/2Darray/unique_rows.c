@@ -13,7 +13,9 @@ Output:
 	1 1 1 0 0 
 
 Method 2 (Use Binary Search Tree)
-Find the decimal equivalent of each row and insert it into BST. Each node of the BST will contain two fields, one field for the decimal value, other for row number. Do not insert a node if it is duplicated. Finally, traverse the BST and print the corresponding rows.
+Find the decimal equivalent of each row and insert it into BST. Each node of the BST will contain two fields,
+one field for the decimal value, other for row number. Do not insert a node if it is duplicated. Finally,
+traverse the BST and print the corresponding rows.
 Time complexity: O( ROW x COL x log( ROW ) )
 Auxiliary Space: O( ROW )
 This method will lead to Integer Overflow if number of columns is large.
