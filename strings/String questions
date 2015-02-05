@@ -1,0 +1,25 @@
+Strings
+- Strings are anagrams of each other
+- String to integer
+- Integer to string
+- Remove duplicates
+- Remove space
+- Remove characters from one string present in another
+- Is the string a rotation of a palindrome?
+- Are two strings are rotations of each other.
+- Rotate a string by k steps
+- Count the number of words
+- Check whether the string contains only unique characters.
+- Print permutations of a string
+- Replace set of characters in a string with X
+- First non repeated letter in a string
+
+
+
+ 
+- Reorder a string such that same characters are atleast distance d from each other (d) XXXXXXX
+- Find the longest palindromic substring - Manacher's algorithm XXXXXXXXXXXXXXXXXXXXXXXXX
+- Combinations of string -XXXXXXX
+- Given a set T of characters and a string S, find the minimum window in S 
+  which will contain all the characters in T	XXXXXXXXXXXXXX
+- longest compound word XXXXXXXXXXXXXXXXXXXX 
