@@ -6,6 +6,15 @@ is rotated to {e, f, g, a, b, c, d}.
 
 */
 
+/*
+Solution:
+
+1. Reverse the entire string.
+2. Reverse the string from 0 to k-1.
+3. Reverse the string from k to n-1.
+
+*/
+
 
 
 void reverse_string(char* str, int left, int right) {
