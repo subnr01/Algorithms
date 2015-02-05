@@ -10,7 +10,11 @@ there is no try.” to “try. no is there not, do or Do”. Assume that all
 
 
 /*
-Solution 1
+Solution 1:
+1, Have two pointers, one traversing the sentence looking for space 
+   while the other points to beginning of each word.
+2. Reverse every word.
+3. Reverse the entire sentence at the end.
 */
 
 /*Function to reverse words*/
