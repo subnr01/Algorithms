@@ -18,7 +18,7 @@ void AlternatingSplit ( struct node *head, struct node **head1, struct node **he
 	{
 		MoveNode(&a, &current); 
 		if (current)
-			MoveNode(&a, &current); 
+			MoveNode(&b, &current); 
 	}
 	*head1 = a;
 	*head2 = b;
