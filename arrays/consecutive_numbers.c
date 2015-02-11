@@ -27,7 +27,8 @@ The idea is to check for following two conditions. If following two conditions a
 1) max – min + 1 = n where max is the maximum element in array, min is minimum element in array and n is the 
 number of elements in array. 
 2) All elements are distinct. 
-To check if all elements are distinct, we can create a visited[] array of size n. We can map the ith element of input array arr[] to visited array by using arr[i] – min as index in visited[].
+To check if all elements are distinct, we can create a visited[] array of size n. We can map the ith element of 
+input array arr[] to visited array by using arr[i] – min as index in visited[].
 
 */
 
