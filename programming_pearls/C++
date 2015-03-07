@@ -1,0 +1,102 @@
+C++
+
+Encapsulation is the unauthorised access to some piece of information and functionality.
+
+How does returning reference help like assignment operator, chaining etc?
+
+inline function, faster, code bloat, thrashing
+
+return object will directly construct the object
+
+must explicitly define class static members
+
+static order fiasco, have a global function x that returns a static Fred object. This is construct on first use
+
+explicitly call destructor when calling placement new
+
+virtual friend function idiom
+
+exception during new
+
+reference counting
+
+constructor failure, throw an exception but do not call destructor
+
+destructor failure: log it but do not throw an exception
+
+throw keyword: rethrow the exception
+
+Pointer airthematic between base and derived
+
+base class constructor calling virtual function on the this pointer
+
+private inheritance versus named constructor paradigm - preventing inheritance
+
+private inheritance and composition "has a " relationship
+
+multiple inheritance left to right constructor invokcation, virtual base to normal base
+
+private inheritance vs composition
+
+
+when you use [] with new then use [] with delete
+
+Declare a copy constructor and an assignment operator for classes with dynamically allocated memory
+
+const and reference members may only be initialized, never assigned.
+
+You must provide a definition for a pure virtual destructor
+
+Always call base class assignment operator inside derived since assignment operator is not inherited
+
+
+operator>> and operator<< are never members ???????
+
+
+
+
+Murray
+---------
+
+Copy constructor = X::X(const X&)
+
+
+String:: String (const String &s) : data (new char [strlen(s.data) + 1]
+{
+	strcpy(data, s.data)
+}
+
+Default constructor will not update the static varaible count, So we have to define the constructor
+
+Avoid assignment class members inside constructor. The construct does one String operation while the assignment version did two operations.
+
+member initialisation list same order as decalaration
+
+There is no null reference, references are bound and must be initialised
+
+
+Assingment operator:
+const String& String:: operator = (const String s1)
+cases:
+1. s=s
+2. x = y = z ( enabled by returning const reference)
+   By returning a const reference, we ensure that it is not used as a lvalue. ((a=b)=c)
+3. Returning value is not really necessary in the normal case, but anyways we return only reference
+
+Implicit conversion from F to T happens when A T constructor takes a F argument
+operator function converts T to F
+
+operator overloading: If you do not own the class, then operator will become a non member
+If operator is implemented as a member,then implicit conversions will not be applied to the first (leftmost)
+operand
+
+The compiler will convert only the right operand and not the left operand
+Complex d = c + 1.0 //good
+Complex d = 1.0 + c // error
+
+= () [] -> must be member
+
+
+
+
+
