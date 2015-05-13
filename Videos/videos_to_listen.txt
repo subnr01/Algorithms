@@ -1,0 +1,95 @@
+videos to listen
+
+1. Advanced operating systems Udacity
+2. Advanced operating systems professor kubi
+3. Linux filesystems: https://www.youtube.com/watch?v=SMcVdZk7wV8
+4. Linux IPC https://www.youtube.com/watch?v=oIN18b4rZ3w
+5. Filesystems: https://www.youtube.com/watch?v=83L9d2EyBco
+6. Linux filesystems:https://www.youtube.com/watch?v=hUCrOB9OzGk, https://www.youtube.com/watch?v=zaKAx9g0SII
+7. https://www.youtube.com/watch?v=t_4_Ba7PSg4--- flash
+8. https://www.youtube.com/watch?v=KK-A-oFgg9w: Log structured file system
+9. https://www.youtube.com/channel/UCU-GQaYDtjmevxW055i4dGA
+10. https://www.youtube.com/user/LinuxConference
+11. https://www.youtube.com/user/dataminingapps/videos
+12. https://www.youtube.com/user/GoogleTechTalks
+13. https://www.youtube.com/user/geoffreychallen
+
+
+
+SCalability
+https://www.youtube.com/watch?v=-W9F__D3oY4
+https://www.youtube.com/watch?v=o6PoZi-HEPw
+https://www.youtube.com/watch?v=mS48X9oEar0
+
+
+
+Startups
+https://www.youtube.com/channel/UCxIJaCMEptJjxmmQgGFsnCg
+
+
+Programming
+https://www.youtube.com/user/BoQianTheProgrammer
+
+
+Google tech talks
+https://www.youtube.com/channel/UCtXKDgv1AVoG88PLl8nGXmw
+
+
+Device drivers
+https://www.youtube.com/user/tube95014
+https://www.youtube.com/watch?v=xXb_Wt-DBKU
+https://www.youtube.com/watch?v=aLXiKpFy8dE
+USB device driver: https://www.youtube.com/watch?v=NYRhkGrt4Q4&list=PLa2N8kjIXIWqYUmF2HvYrv35_R2JthYFo
+https://www.youtube.com/channel/UCU-GQaYDtjmevxW055i4dGA
+https://www.youtube.com/watch?v=Zn8mEZXr6nE&list=PL2GL6HVUQAuksbptmKC7X4zruZlIl59is
+
+
+
+Distributed systems
+https://www.youtube.com/watch?v=F_4BCNl0iVk&list=PL-Em-BJn1-QP2iSAexYAu-pS4Twh1402V
+https://www.youtube.com/watch?v=Ve4iFhCdX_M&list=PLacuG5pysFbCrt5Eac46S3lbAaZLal57k
+https://www.youtube.com/watch?v=iHR1NWEMEaE
+https://www.youtube.com/watch?v=hNOEL3SM9No&list=PL765D8EEE5113BA3E
+
+Distributed algorithms
+https://www.youtube.com/watch?v=yjPBkvYh-ss&list=PL8805D5982F183F87
+
+
+
+Google I/O
+https://www.youtube.com/watch?v=wtLJPvx7-ys
+
+
+Usenix
+https://www.youtube.com/user/USENIXAssociation
+https://www.youtube.com/watch?v=YvchhB1-Aws
+
+
+Algorithms
+Lock free hashing: https://www.youtube.com/watch?v=HJ-719EGIts
+Lock free programming: https://www.youtube.com/watch?v=LbOB_moUa94; https://www.youtube.com/watch?v=O4Jdq4PtfPA
+
+C++ code
+Effeciecny C++: https://www.youtube.com/watch?v=qPqIneYKfZk
+https://www.youtube.com/watch?v=NOCElcMcFik
+https://www.youtube.com/watch?v=Qq_WaiwzOtI
+https://www.youtube.com/watch?v=MvFj8qo1iuA
+https://www.youtube.com/channel/UCMlGfpWw-RUdWX_JbLCukXg
+https://www.youtube.com/watch?v=ndUtK5IZslc
+https://www.youtube.com/watch?v=Xf35TLFKiO8
+
+
+Fibre channel
+https://www.youtube.com/watch?v=90RUYVC4_ms
+https://www.youtube.com/watch?v=zWrQgtK73lU
+https://www.youtube.com/watch?v=DMl7vWE0vEI&list=PLrEMJQQgYLXjd48C7aDfkRHmpAusjSxXg&index=5
+
+
+Converged Infrastruvture
+ https://www.youtube.com/watch?v=x7EyShrDpMc
+
+https://www.youtube.com/watch?v=_ySVdtanJcA
+Future storage:https://www.youtube.com/watch?v=ACOzpPiGJzE
+
+
+
