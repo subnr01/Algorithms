@@ -1,0 +1,78 @@
+Linux debugging
+
+Core dump Analysis for Linux Application Debugging - Part1
+
+https://www.youtube.com/watch?v=CR569T-B2M0
+
+
+
+
+Debugging Kernel Issue Part 1 : Prashant Lakhera
+https://www.youtube.com/watch?v=V5b4VtHu4hw&index=12&list=PLckUzKjgYDgajJVYOjNztS6Q4SOho0RKY
+
+
+
+1. kernel bug soft lockup
+Symptom: CPU#0 stuck for 10s!	
+-- loop in kernel mode for x seconds without giving the other process to perform
+-- kernel defects, hardware issue, extermely high workloads
+sysctl -algrep -i softlock
+sysctl -algrep  -i watchdog
+
+2. INFO task<process:pid> blocked for more than 120 seconds
+ps aux | grep -i hung
+
+
+3. Machine check exception
+-- hardware issues. CPU reports error detected by CPU on MCU
+
+4. Error Detection and Correction (EDAC)
+-- Hardware mechanism to detect and report memory chip or memory controller failure
+
+5. Non maskable interrupts
+-- hardware generated interrupt that cannot be ignored
+-- known and unknown NMI
+-- set the "kernel.unknown.nmi.panic = 0"
+-- nmi from software: nmi watchdog
+
+kdump
+-- dump vmcore
+-- reserve some memory for kdump. ( 128 M )
+-- boot without bios -- crash kernel
+-- kexec prevents system going to bios stage
+-- boot/grub/grup.conf 
+
+vmlinux
+--vmlinux has all the debugging symbols
+-- kernel-debuginfo
+-- people.redhat.com/anderson
+-- kernel version and kernel debuginfo version must match
+-- vmlinux vmcore
+-- oops: 0002 SMP
+-- one swapper per CPU
+-- log command dump of system buffer
+-- kmem -i
+
+IO debugging
+-- vmstat , top
+-- sar tool
+-- how to find which disk is giving I/O issue: iostat -tkx -p 1 3
+-- rrpm/s and wrpm/s
+-- app->block layer--> I/O Scheduler--> Drivers --> storage
+-- /sys/block/sda/queue/scheduler
+-- avg queue size at I/O scheduler layer 
+-- nr_requests ( I/O schdeuler layer) and queue_depth ( storage)
+-- nr_requests > queue_depth then there is problem
+-- iotop which process is causing problem; /proc/self/io must exist for process for iotop to work; io_accounting
+-- blktrace for debugging I/O issues
+-- for blktrace; mount debugfs
+-- blkparse - block layer
+
+
+CPU debugging
+https://www.youtube.com/watch?v=rC11yCGwUHk&index=17&list=PLckUzKjgYDgajJVYOjNztS6Q4SOho0RKY
+--top command, CPU bound issue, I/O intensive issue
+-- w command
+
+
+
