@@ -1,6 +1,6 @@
 videos to listen
 
-1. Advanced operating systems Udacity
+1. Advanced operating systems Udacity: https://www.youtube.com/playlist?list=PLAwxTw4SYaPkKfusBLVfklgfdcB3BNpwX
 2. Advanced operating systems professor kubi
 3. Linux filesystems: https://www.youtube.com/watch?v=SMcVdZk7wV8
 4. Linux IPC https://www.youtube.com/watch?v=oIN18b4rZ3w
