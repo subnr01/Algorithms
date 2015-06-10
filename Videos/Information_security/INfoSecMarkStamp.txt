@@ -1,0 +1,21 @@
+Information Security Mark Stamp
+
+Crypto Basics
+--------------
+
+Cryptology, Cryptography, Cryptanalysis
+plaintext-->ciphertext
+symmetric key vs public key
+Assumptions about Cryptology
+Kerckhoffs Principle
+
+Simple substitution : 
+Caesar's cipher (shift by 3) : shift by n 26 keys
+large number of keys, 26! permutations
+
+cipher secure: need to try all keys and size of key is very large
+
+
+
+
+

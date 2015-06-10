@@ -1,0 +1,9 @@
+Programming Pearls - Column1 problems
+
+
+5. The programmer said that he had about a megabyte of free storage, but the code we sketched uses 1.25 megabytes. He was able to scrounge the extra space without much trouble. If the megabyte had been a hard and fast boundary, what would you have recommended? What is the run time of your algorithm?
+
+
+Answer: Representing all ten million numbers with a bitmap requires that many bits, or 1.25 million bytes. Employing the fact that no phone numbers begin with the digits zero or one reduces the memory to exactly one million bytes. Alternatively, a two-pass algorithm first sorts the integers 0 through 4,999,999 using 5,000,000/8 = 625,000 words of storage, then sorts 5,000,000 through 9,999,999 in a second pass. A k-pass algorithm sorts at most n nonrepeated positive integers less than n in time kn and space n/k.
+
+

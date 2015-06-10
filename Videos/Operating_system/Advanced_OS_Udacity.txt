@@ -1,4 +1,128 @@
-Advanced operating systems Udacity
+Advanced Operating systems
+
+An operating system should protect the integrity of the
+hardware resources while providing services to the
+applciations.
+
+System bus is a sycnhronous communication device between CPU and the Memory.
+System bus has a much more communication bandwidth available than the I/O bus.
+System bus is a high speed bus and it connects via a bridge to the I/O bus.
+The Bridge can be a specialised I/O processor for scheduling the devices that 
+need to communicate with the memory if it is a DMA device or the CPU if it is a
+low speed device.
+So the role of the bridge is like a processor in itself controlling who has access 
+to this I/O bus from the set of devices that may be competing at the same time 
+for attention by the CPU and communicating the intent of the I/O device either 
+with the memory or with the CPU.
+
+The System bus has higher speed than the I/O bus. System bus has higher bandwidth
+since it has to cater to CPU or devices that want to access Memory via DMA.
+Frame buffers also connect directly to system bus.
+
+Asserting the interrupt line of the Bus results in raising an interrupt
+to the CPU.
+An interrupt is a hardware mechanism for alerting the processor that something
+external requires the attention of the processor.
+
+
+
+Progam is a static image laoded into memory. 
+Process is program in execution ( program + state of the running program)
+Process is a program+state of all threads executing in the program
+
+Address space of each process is distinct from one another
+and this abstraction is implemented using the hardware 
+utlities.
+
+
+Monolithic Structure:
+Each application is in its own address space
+OS is in its own address space
+app(1..n)--> OS <---> hardware
+OS is protected from App and vice versa
+All the services are contained in the OS so it is called monolothic
+provides protection, consolidates all services in one monolithic structure
+Ability to customise the operating system service for different applications
+is lost.
+one size fits all model. no application based computing
+Example: interactive vedio games.
+
+
+Microkernel structure
+applciatiosn are in own harware address sapce
+microkernel runs in prevliged mode and provides
+simple abstractions such as threads, ipc.
+The system services are implemented as servers
+on top of the microkernel
+Each service is in its own hardware address space
+There is no distinction between applcaitons and system
+services that are executing as  server processes
+on top of the microkernel
+There is strong protection is everywhere
+Microkernel need to provice ipc mechanisms
+so that the apps can request system services by
+contacting the servers and servers need to talk 
+to one another.
+We gain extensibility. We can have same service
+provided by a replicated servers.
+App1--> file system server1
+App2--> file system srever2
+There is a potential for performance loss.
+as servers need to talk to one another through ipc
+
+applciation--> microkernel--> file system server--> microkernel--> applciatin
+applciation--> microkernel--> file system server--> microkernel --< 
+storage manager--> microkernel--> file system --> microkernel--> applciatin
+
+Monolthic only two address spaces: app and kernel
+Many address spaces traversal
+1. Cost of switching address space : explicit cost
+2. Copying of parameters : implicit cost
+3. Change in locality, so cache misses in memory heiarachy
+
+Microkernel performance problems due to frequent border corssings
+Monolithic one address space so extensibility problem
+
+
+We want the operating system structure to be thin like a microkernel that
+is mechanism should be in kernel and no policies in kernel.
+The structure should allow fine grained access to system resources
+without border crossing as much as possible
+It should be flexible meaning resource management should be easily
+morphed to suit the needs of the application without sacrificing 
+protection and performance.
+Flexibility like the microkernel apporach, perofrmance and protection
+from the monolithic approach
+( perofrmance, protection and flexibility)
+
+Hydra OS: resource management coarse grained no extensibility
+Mach: portability and extensibility but no performance
+
+spin approach to extensibility: co-location of kernel + extensions. (what about protection)
+protection through compiler enforced modularity, strong typed language
+kernel provides interfaces, logical protection domains implement these interfaces
+no hardware address based protection
+Applications can bind themselves to different implementations of the same interface
+function thus gaining flexiblity.
+Combine small logical protection domains into a large aggregate protection domains
+compile time checking and run time enforcement of the logical protection domains.
+(flexibility, protection, performance) all in one bag.
+event based communication model: events map to event handler(1-1, n-1, 1-n)
+spin global scheduler, extension based scheduler (strand)
+Example: modula3
+
+exokernel approach to extensibility
+kernel exposes hardware explicity to the os extensions, decouple authorisation
+from actual use. key, library operating system, validate the key everytime,secure binding, 
+
+
+
+
+
+
+
+
+
 
 
 
