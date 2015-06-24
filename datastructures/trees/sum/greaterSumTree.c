@@ -28,27 +28,33 @@ than the key of current node.
 // This function traverses the tree in reverse inorder so
 // that we have visited all greater key nodes of the currently
 // visited node
-void transformTreeUtil(struct Node *root, int *sum)
+// A recursive function that traverses the given BST in reverse inorder and
+// for every key, adds all greater keys to it
+void addGreaterUtil(struct node *root, int *sum_ptr)
 {
-   // Base case
-   if (root == NULL)  return;
+    // Base Case
+    if (root == NULL)
+        return;
  
-   // Recur for right subtree
-   transformTreeUtil(root->right, sum);
+    // Recur for right subtree first so that sum of all greater
+    // nodes is stored at sum_ptr
+    addGreaterUtil(root->right, sum_ptr);
  
-   // Update sum
-   *sum = *sum + root->data;
+    // Update the value at sum_ptr
+    *sum_ptr = *sum_ptr + root->key;
  
-   // Store old sum in current node
-   root->data = *sum - root->data;
+    // Update key of this node
+    root->key = *sum_ptr;
  
-   // Recur for left subtree
-   transformTreeUtil(root->left, sum);
+    // Recur for left subtree so that the updated sum is added
+    // to smaller nodes
+    addGreaterUtil(root->left, sum_ptr);
 }
  
-// A wrapper over transformTreeUtil()
-void transformTree(struct Node *root)
+// A wrapper over addGreaterUtil().  It initializes sum and calls
+// addGreaterUtil() to recursivel upodate and use value of sum
+void addGreater(struct node *root)
 {
-    int sum = 0; // Initialize sum
-    transformTreeUtil(root, &sum);
+    int sum = 0;
+    addGreaterUtil(root, &sum);
 }
