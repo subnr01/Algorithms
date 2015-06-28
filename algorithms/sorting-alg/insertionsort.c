@@ -6,30 +6,63 @@ Average case performance 	O(n2)
 Worst case space complexity 	O(n) total, O(1) auxiliary
 */
 
-
-/* Insertion Sort
-
-The outer loop stores the element that needs to be compared.
-The inner loop compares the element with its predeccesors.
-When a position is found,the current element is put in position in that position in the inner loop.
-The element is restored in the outer loop.
-
-
-*/
-
-void insertion_sort (int *a, int n) {
-    int i, j, t;
-    for (i = 1; i < n; i++) {
-        t = a[i];
-        for (j = i; j > 0 && t < a[j - 1]; j--) {
-            a[j] = a[j - 1];
-        }
-        a[j] = t;
-    }
-}
-
-
 /*
+Siedwick:
+As in selection sort, the items to the left of the current index are in sorted order
+during the sort, but they are not in their final position, as they may have to be moved 
+to make room for smaller items encountered later. The array is, however, fully sorted 
+when the index reaches the right end.
+Unlike that of selection sort, the running time of insertion sort depends on the 
+ini- tial order of the items in the input. For example, if the array is 
+large and its entries are already in order (or nearly in order), then insertion
+sort is much, much faster than if the entries are randomly ordered or in reverse order.
+
+
+Insertionsort uses (n^2)/4 compares and (n^2)/4 exchanges to sort a randomly ordered
+array of length N with distinct keys on the average.
+The worst cast is (n^2)/2 compares and (n^2)/2 exchanges and the best case is 
+(n-1) compares and 0 exchanges.
+
+Insertion sort works well for certain types of nonrandom arrays that often arise
+in practice, even if they are huge. For example, as just mentioned, consider what 
+happens when you use insertion sort on an array that is already sorted. 
+Each item is immediately determined to be in its proper place in the array, 
+and the total running time is linear.
+
+More generally, we consider the concept of a partially sorted array, 
+as follows: An inversion is a pair of entries that are out of order
+in the array.
+If the number of inversions in an array are less a constant multiple
+of the array size, we say that the array is partially sorted.
+Typical examples of partially sorted arrays are the following:
+■ An array where each entry is not far from its final position
+■ A small array appended to a large sorted array
+■ An array with only a few entries that are not in place
+Insertion sort is an efficient method for such arrays; selection sort is not. 
+Indeed, when the number of inversions is low, insertion sort is likely to 
+be faster than any sorting method 
+
+The number of exchanges used by insertion sort is equal to the
+number of inversions in the array and the number of compares
+is at least equal to the number of inversions plus 
+the array size - 1.
+
+It is not difficult to speed up insertion sort substantially, by shortening its inner loop to
+move the larger entries to the right one position rather than doing full exchanges
+
+In summary, insertion sort is an excellent method for partially sorted arrays and is also a 
+fine method for tiny arrays. These facts are important not just because such arrays frequently 
+arise in practice, but also because both types of arrays arise in intermediate stages of
+advanced sorting algorithms, so we will be considering insertion sort again in relation to such algorithms.
+
+The running times of insertion sort and selection sort are quadratic 
+and within a small constant factor of one another for randomly ordered arrays of distinct values.
+
+Insertion sort is slow for large un- ordered arrays because the only exchanges 
+it does involve adjacent entries, so items can move through the array only one 
+place at a time. For example, if the item with the 
+smallest key happens to be at the end of the array, 
+n-1 exchanges are needed to get that one item where it belongs.
 
 Insertion sort many advantages:
 
@@ -98,3 +131,30 @@ a single insertion sort on the final array:
 
 
 */
+
+
+/* Insertion Sort
+
+The outer loop stores the element that needs to be compared.
+The inner loop compares the element with its predeccesors.
+When a position is found,the current element is put in position in that position in the inner loop.
+The element is restored in the outer loop.
+
+
+*/
+
+
+
+void insertion_sort (int *a, int n) {
+    int i, j, t;
+    for (i = 1; i < n; i++) {
+        t = a[i];
+        for (j = i; j > 0 && t < a[j - 1]; j--) {
+            a[j] = a[j - 1];
+        }
+        a[j] = t;
+    }
+}
+
+
+
