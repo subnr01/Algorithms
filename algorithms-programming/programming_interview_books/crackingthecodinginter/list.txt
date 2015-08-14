@@ -1,0 +1,124 @@
+
+Cracking the Coding interview ( 5th Edition)
+
+Arrays and Strings
+--------------------
+
+1. Implement an algorithm to determine whether a string has all unique characters?
+2. Implement string reverse
+3. Given two strings, determine if one is permutation of another?
+4. Replace all spaces in a string.
+5. Implement a method that performs basic compression of repeated characters
+6. Rotate an image by 90 degrees
+7. Write an algorithm such that if an element in a Matrix is 0, then entire row and column is set to 0
+8. Given two strings, check if one string is rotation of another.
+
+
+
+Linked Lists
+1. Remove duplicates from a linked list?
+2. Implement an algorithm to find the kth to last element in the linked list
+3. Implement delete a node in the list given access to only that node
+4. paritition a linked list such a<x<b
+5. Add two numbers in the linkedlist and return the sum
+6. Return the first node in the loop 
+7. Check if linked list is a palindrome
+
+
+Stacks and queues
+1. Single array three stacks implementation
+2. Push, pop and min should take min time
+3. Stack of plates
+4. Towers of hanoi
+5. Queue with two stacks
+6. Sort a stack in ascending order
+7. Data structure to maintain dog cat system.
+
+
+
+Trees and Graphs
+1. check whether tree is balanced
+2. Given a directed graph, find whether there is a route between two nodes
+3. Given sorted array with unique integer elements, write an algorithm to create a 
+    binary search tree with minimal height
+4. Write an algorithm that creates a linked list at each depth
+5. Check whether a binary tree is a binary search tree
+6. Find the inorder successor
+7. Find the first common ancestor in a BINARY TREE
+8. Check whether T2 is a subtree of T1
+9. Print all paths which sum to a given value. The path need not start
+   or end at the root or a leaf
+
+
+Bit Manipualtion
+1. 
+2. Given a real number between 0 and 1 that is passed as a double, print
+   the binary representation   
+3. Print the next smallest and next largest number that have the same number of 1 bits 
+   in their binary represenation 
+4. what does n & (n-1) do?
+5. Determine the number of bits required to convert integer A to integer B.
+6. Swap even and odd bits
+7. Write code to find missing integer where array contains all elements from 0 to n except for 1 number
+8. 
+
+
+
+Object Oriented Design
+1. Design data structure for generic deck of cards
+2. Call center problem
+3. musical jukebox
+4. parking lot
+5. online book reader system
+6. jigsaw pizzle
+7. chat server
+8. Othello
+9. in memory file system
+10. implement a hash table which uses chaining to handle collisions
+
+
+Recursion and Dynamic programming
+1. Implement a method to count how many possible ways a child can run up the stairs
+   if the child can hop 1 or 2 or 3 steps at a time.
+2. Robot
+3. Magic index is where A[i] is i. Find whether magic index exists in a sorted array. 
+   What happens if values are not distinct.
+4. Method to return all subsets of a set
+5. Compute all permutations of a string
+6. Implement an algorithm to print all valid combinations of n pairs of parenthiessis
+7. Implement the paint fill function
+8. Represent n cents out of infinite number of 25, 10, 5 and 1 cent
+9. Arrange all eight queens on a chess baord without attacking each other
+10. Stacking of boxes
+11. Evaluate boolean expression
+
+
+Scalability and memory limits
+1. Service is used by 100 applications. How do you design client facing service which provides the informatoin to clients
+2. How do u design very large datastrcutures for Facebook or linkedin
+3. Four billion integers in a file, provide algorithm to generate an integer not in the file.
+   how will you do it if you have 1GB of memory. or 10 MB of memory with 1 billion
+4. numbers from 1 to N where N is at most 32000. Array has duplicate entries and you do not know how much N is.
+   with only 4KB how you print all duplciate elements in the array.
+5. design web crawler and do not get into infiinite loops
+6. 10 billion URLs, how do you detect duplciate documents
+7. web server for search engine
+
+
+
+Sorting and searching
+1. A sorted arrays A and B where A has enough space to hold B at the end. Method to merge B into A in sorted order.
+2. sort array of strings so that all anagrams are next to each other.
+3. Given sorted array of n integers that has been rotated an unknown number of times, write code to find element in the array
+   Array was sorted intiallly in the increasing order.
+4. Imagine you have a 20GB file with one string per line. Explain how you sort the file.
+5. Find location of a string in sorted array of strings
+6. Find element in M*N matrix where rows and columns are sorted
+7. Circus and tower
+8. stream of integers
+
+
+Threads and locks
+
+
+
