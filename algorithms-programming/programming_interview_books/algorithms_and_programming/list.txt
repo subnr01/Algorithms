@@ -1,0 +1,57 @@
+
+Numbers:
+----------
+1. Compute pow (a, n) normal manner
+2. Compute pow (a, n) with log n complexity
+3. Comput product of a and b without "*" operator
+4. Comput quotient and remainder with the division operator
+5. Comput GCD of two non negative numbers
+6. Write a program that prints the squares of natural numebers using addition/subtraction
+7. Write a program that prints the factorisation of a given number.
+8. Write a program that prints the decimal representation of a given positive number.
+
+
+Arrays:
+----------
+1. Fill an array x with zeroes
+2. Count the number of zeroes in an array
+3. Put elements of an array in reverse order
+4. An array x [1].. x [m+n] is considered as a concatenation of two segments: 
+a prefix x [1].. x [m] of length m and a suffix x [m+1].. x [m+n] of length n. 
+Without using other arrays, exchange these prefix and suffix segments.
+5. Find the number of common elements between two sorted arrays ( non decreasing and not increasing case)
+6. Merge two arrays
+7. Find common element between 3 non decreasing arrays (1.2.24)
+8. A matrix is arranged row-wise and column wise. Find an element in such a matrix (1.2.28 and 1.2.29)
+9. Rearrange elements on either side of a threshold given (1.2.31 and 1.2.32)
+10. In a two dimensional array. compute the sum of elements of any square (1.2.35)
+11. Determine if second sequence is a subsequence of the first one (1.3.2)
+12. With two sequences, find the max length of a sequence that is a subsequence of both given sequences(1.3.3)
+13. From a given sequence, find max length of an increasing sequence (1.3.4)
+
+
+
+DataStructures:
+-------------------
+Stacks
+1. Check the {} of a sequence (6.1.1)
+2. Implement two stacks with one array (6.1.3)
+3. Implement k stacks of elements of type T with 
+   a total of at most n elements using arrays with 
+   total length C(n + k). (6.1.4)
+
+Queues
+1. Implement a queue of limited size, so that all operations run in constant time
+2. Implement a queue with two stacks
+3. Deque (double-ended queue) is a structure that combines the 
+   properties of a queue and a stack: we can add and remove elements 
+   from both ends of a deque. Implement a deque using an array in such a 
+   way that each deque operation runsin O(1) time. (6.2.3, 6.2.4)
+4. Implement k queues with total length not exceeding n, using memory of size O(n + k) 
+   (that is, not exceeding C(n + k) for some 	constant C). Each operation (except for 
+   initialization, which makes all the queues empty) should run in time O(1) (that is, 
+   limited by a constant that does not depend on n). (6.2.8)
+5. Convex hull (6.2.10)
+
+Sets
+
