@@ -1,0 +1,55 @@
+OptionSet17
+Color:Sangria Red Clearcoat Metallic
+Transmission:manual
+Brakes:ABS
+SideAirBag:none
+Moonroof:none
+
+OptionSet18
+Color:French Blue Clearcoat Metallic
+Transmission:manual
+Brakes:ABS
+SideAirBag:none
+Moonroof:selected
+
+OptionSet19
+Color:Pitch Black Clearcoat
+Transmission:manual
+Brakes:ABS
+SideAirBag:selected
+Moonroof:none
+
+OptionSet20
+Color:Liquid Grey Clearcoat Metallic
+Transmission:manual
+Brakes:ABS
+SideAirBag:selected
+Moonroof:selected
+
+OptionSet21
+Color:Twilight Blue CLearcoat Metallic
+Transmission:manual
+Brakes:ABSAT
+SideAirBag:none
+Moonroof:none
+
+OptionSet22
+Color:Grabber Green Clearcoat Metallic
+Transmission:manual
+Brakes:ABSAT
+SideAirBag:none
+Moonroof:selected
+
+OptionSet23
+Color:Sangria Red Clearcoat Metallic
+Transmission:manual
+Brakes:ABSAT
+SideAirBag:selected
+Moonroof:none
+
+OptionSet24
+Color:Cloud 9 White Clearcoat
+Transmission:manual
+Brakes:ABSAT
+SideAirBag:selected
+Moonroof:selected

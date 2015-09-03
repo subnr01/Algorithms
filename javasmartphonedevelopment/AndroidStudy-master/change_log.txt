@@ -1,0 +1,59 @@
+1. in Unit 3:
+a.  What you were asked to change
+	¡°methods in Automobile class are not declared as synchronized¡±
+b.  How many points were taken off.
+	2 points
+c.  What changes you made in what files
+	in package model Automobile.java, added synchronized to all methods need to be synchronized
+d.  How many points should be added back in your opinons
+	2 points
+
+2. in Unit 3:
+a.  What you were asked to change
+	¡°Also just a suggestion use one exceptionHandler class instead of >1 to handle 5 exceptions¡±
+b.  How many points were taken off.
+	0 points
+c.  What changes you made in what files
+	Changed OptionException.java and relative files
+d.  How many points should be added back in your opinons
+	0 points
+
+3. in Unit 4
+a.  What you were asked to change
+	¡°DefaultSocketClient class is used in Server implementation.
+	DefaultSocketClient class has to be modified to create a proxy 
+	(return value from accept() method) inside the implemented server.¡±
+b.  How many points were taken off.
+	2.5 points
+c.  What changes you made in what files
+	
+d.  How many points should be added back in your opinons
+	2.5 points
+
+4. in Unit 4
+a.  What you were asked to change
+	¡°DefaultSocketClient class is used in Client implementation. ¡±
+b.  How many points were taken off.
+	2.5 points
+c.  What changes you made in what files
+	
+d.  How many points should be added back in your opinons
+	2.5 points
+
+5. in Unit 4
+a.  What you were asked to change
+	¡°There should be a separate package that handles all the client connections 
+	and the server connections. You can have 1 package called handleConnections 
+	that contains SocketClientConstants interface, SocketClientInterface 
+	DefaultSocketClient which implements these 2 interfaces. DefaultSocketClient
+	can have methods like openConnection() -> handles Socket and creates ObjectOutputStream 
+	and ObjectInputStream , handleSession() and closeSession()¡±
+b.  How many points were taken off.
+	2 points
+c.  What changes you made in what files
+	
+d.  How many points should be added back in your opinons
+	2 points
+
+
+	

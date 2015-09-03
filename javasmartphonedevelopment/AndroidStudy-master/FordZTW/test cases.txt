@@ -1,0 +1,65 @@
+The input is from OptionSet0.txt, OptionSet1.txt, OptionSet2.txt, there are 24 different optionsets with the name OptionSetXX.
+
+The output is like below:
+
+The model FordZTW0 includes 8 optionSets:
+OptionSet1's price is 18445
+OptionSet2's price is 19040
+OptionSet3's price is 18795
+OptionSet4's price is 19390
+OptionSet5's price is 18845
+OptionSet6's price is 19440
+OptionSet7's price is 19195
+OptionSet8's price is 19790
+
+The model FordZTW1 includes 8 optionSets:
+OptionSet9's price is 20070
+OptionSet10's price is 20665
+OptionSet11's price is 20420
+OptionSet12's price is 21015
+OptionSet13's price is 17630
+OptionSet14's price is 18225
+OptionSet15's price is 17980
+OptionSet16's price is 18575
+
+The model FordZTW2 includes 8 optionSets:
+OptionSet17's price is 18030
+OptionSet18's price is 18625
+OptionSet19's price is 18380
+OptionSet20's price is 18975
+OptionSet21's price is 19255
+OptionSet22's price is 19850
+OptionSet23's price is 19605
+OptionSet24's price is 20200
+
+After deserialization, we get the info below:
+The model FordZTW0 includes 8 optionSets:
+OptionSet1's price is 18445
+OptionSet2's price is 19040
+OptionSet3's price is 18795
+OptionSet4's price is 19390
+OptionSet5's price is 18845
+OptionSet6's price is 19440
+OptionSet7's price is 19195
+OptionSet8's price is 19790
+
+The model FordZTW1 includes 8 optionSets:
+OptionSet9's price is 20070
+OptionSet10's price is 20665
+OptionSet11's price is 20420
+OptionSet12's price is 21015
+OptionSet13's price is 17630
+OptionSet14's price is 18225
+OptionSet15's price is 17980
+OptionSet16's price is 18575
+
+The model FordZTW2 includes 8 optionSets:
+OptionSet17's price is 18030
+OptionSet18's price is 18625
+OptionSet19's price is 18380
+OptionSet20's price is 18975
+OptionSet21's price is 19255
+OptionSet22's price is 19850
+OptionSet23's price is 19605
+OptionSet24's price is 20200
+

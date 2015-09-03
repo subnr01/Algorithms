@@ -1,0 +1,40 @@
+So what is backtracking?
+
+Backtracking is a general algorithmic technique that considers searching every
+possible combination to solve an optimisation problem.
+
+While backtracking is useful for hard problems to which we do not know more 
+efficient solutions, it is a poor solution for the everyday problems that other 
+techniques are much better at solving.
+
+However, dynamic programming and greedy algorithms can be thought of as 
+optimizations to backtracking, so the general technique behind backtracking 
+is useful for understanding these more advanced concepts. 
+
+
+Backtracking methodology
+1. Get a number of choices
+2. For each choice, consider every option recusively
+3. Return the best solution found.
+
+
+Usually backtracking problems take exponential time.
+
+
+Backtracking well known problems
+
+- permutations of a string
+- n queens
+- longest common subsequence
+- Travelling salesman problem
+- solution spaces
+- Convex hull
+- tug of war
+- Hamiltonian cycle
+- sudoku
+- m coloring problem
+- subset sum
+- rat in a maze
+- the knights tour problem
+
+

@@ -1,1 +1,5 @@
 Algorithms questions
+
+Dutch Flag problem
+First occurrence using binary search in a ascending array full of duplicates
+

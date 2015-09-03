@@ -1,0 +1,26 @@
+The output is like following:
+
+Initially facing up:heads
+Currently facing up:tails
+Currently facing up:tails
+Currently facing up:tails
+Currently facing up:tails
+Currently facing up:heads
+Currently facing up:heads
+Currently facing up:heads
+Currently facing up:tails
+Currently facing up:tails
+Currently facing up:heads
+Currently facing up:heads
+Currently facing up:tails
+Currently facing up:tails
+Currently facing up:heads
+Currently facing up:tails
+Currently facing up:tails
+Currently facing up:tails
+Currently facing up:tails
+Currently facing up:heads
+Currently facing up:tails
+heads up: 7 times and tails up: 13 times
+
+There is no special input for this project, just simulate to toss coin 20 times.

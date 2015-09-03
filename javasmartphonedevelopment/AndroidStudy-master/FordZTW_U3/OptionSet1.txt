@@ -1,0 +1,28 @@
+Make Name:
+Toyota
+Model Name:
+ToyotaLexus
+Base price:
+39990
+5
+Color
+French Blue Clearcoat Metallic
+Twilight Blue Clearcoat Metallic
+CD Silver Clearcoat Metallic
+
+Transmission
+automatic
+standard $-1029
+
+Brakes
+Standard
+ABS $700
+ABS with Advance Trac $1625
+
+Side Impact Air Bags
+selected $550
+none
+
+Power Moonroof
+selected $995
+none

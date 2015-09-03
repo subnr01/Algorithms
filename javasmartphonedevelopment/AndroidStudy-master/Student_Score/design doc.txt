@@ -1,0 +1,5 @@
+Main points:
+* Customer Exception Handling for students number exceeds 40
+* class Student extends from Abstract class StudentAbstract and overide the abstract methods printInfo
+* Read File using FileReader and BufferedReader
+* Put Exception, Util and other files in their own package

@@ -1,0 +1,46 @@
+Test case:
+-------------------------
+Four cars:
+   make       model    color   license  number of minutes  Purchased minutes
+   Toyota   Corolla    Black   XYZ1234        160                50
+   Honda      Civic    Red     IJK4321        180		 120
+   Audi       Q7       White   ABCD123        30		 0
+   Audi       X5       Purple  518516QQ       95		 100
+
+Four PoliceOfficers:
+   name      badge number
+   Jacky	XYZ911	
+   Tom		XYZ008
+   Jason	XYZ119
+   Joy		XYZ333
+-------------------------
+
+
+The output is as following:
+-------------------------
+ticket number:3
+
+Make:Toyota
+Model:Corolla
+Color:Black
+LicenseNumber:XYZ1234
+Fine:35.0
+Police Name:Jacky
+Badge Number:XYZ911
+
+Make:Honda
+Model:Civic
+Color:Red
+LicenseNumber:IJK4321
+Fine:25.0
+Police Name:Tom
+Badge Number:XYZ008
+
+Make:Audi
+Model:Q7
+Color:White
+LicenseNumber:ABCD123
+Fine:25.0
+Police Name:Jason
+Badge Number:XYZ119
+-------------------------

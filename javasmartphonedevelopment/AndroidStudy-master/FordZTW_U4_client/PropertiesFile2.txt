@@ -1,0 +1,17 @@
+CarMake=Tesla
+CarModel=TeslaZ3
+Baseprice=100230
+OptionSize=4
+Option1=Transmission
+OptionValue1a=automatic
+OptionValue1b=standard $-1815
+Option2=Brakes
+OptionValue2a=Standard
+OptionValue2b=ABS $1400
+OptionValue2c=ABS with Advance Trac $4625
+Option3=Side Impact Air Bags
+OptionValue3a=selected $1350
+OptionValue3b=none
+Option4=Power Moonroof
+OptionValue4a=selected $1595
+OptionValue4b=none

@@ -1,0 +1,92 @@
+
+----------------
+Algorithms
+----------------
+Given a rotated array "k"times, find the number in most efficient way.
+Write the most efficient algorithm to find square/square root of a number.
+Write the most efficient algorithm to find if a number is prime or not.
+Find Maximum sum in an array such that no 2 elements are adjacent. (geeks)
+Find k largest elements in an array
+Dynamic programming word break problem (geeks)
+max length of increasing subsequence
+Minimum number of platforms required in a ralway station (geek)
+Given 2D sorted array, find kth largest element
+Minimum number of steps to reach end of array from start (DP question)
+Find count of a number in a sorted array
+Find minimum number of swaps required for arranging pairs adjacent to each other
+
+
+----------------
+Graphs
+----------------
+How to determine whether a point is outside a polygon
+Given a boolean 2D matrix, find the number of islands.(geeksogeeks)
+
+
+
+----------------
+Strings
+----------------
+Delete all characters in S that is common in both S and M.
+String matching where one string contains wildcard characters.(geeksogeeks)
+Standard Josephus problem (geeks)
+
+
+
+----------------
+Datastructures
+----------------
+
+Write a recursive function to reverse the contents of the 
+linkedlist based Stack datastructure?
+Implementation of heap and complexity
+
+Data structure question: http://www.geeksforgeeks.org/a-data-structure-question/
+Detect loop in linked list and return starting point of the loop.
+
+Implement google autosuggest using trie
+
+Draw a line on 2D array of boolean. You will be given start point and end point co-ordinates.
+
+
+
+----------
+Binary trees
+----------
+Given preorder and postorder, write a function to print inorder
+of the tree?
+Find total number of leaf nodes in a binary tree?
+Print Left view of binary tree
+BFS traversal of a binary tree
+Find k distant nodes in a given tree. The parent paths also need to be printed
+Find the Inorder predecessor and successor for a given key in BST
+Given a binary tree, print its bottom view.
+
+
+------
+OOAD
+-----
+Implement MineSweeper Game
+
+Give design for leader board implementation. 
+1000 customers with maximum points should be displayed 
+on the leader dashboard. UI should handle real time changes. 
+A customer’s points are updated after each ride/order.
+
+Design a logging library
+
+Design the entire bowling alley system. One bowling game 
+will be played by multiple players on a single lane.
+
+
+Design a complete Railway Reservation System
+
+Code snake and ladder solution
+
+-------
+System design
+-------
+Implement LRU
+How would you split a search query across multiple machines?
+
+

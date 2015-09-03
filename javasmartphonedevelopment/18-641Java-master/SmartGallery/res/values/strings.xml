@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">SmartGallery</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="add">icon_add</string>
+    <string name="add_picture">Create a new picture</string>
+    <string name="title_activity_display">Display</string>
+    <string name="title_activity_edit">Edit</string>
+    <string name="default_picture">default picture</string>
+    <string name="default_text">default text</string>
+    <string name="default_text_comment"> default text comment</string>
+    <string name="default_geolocation">Picture taken in: Pittsburgh</string>
+    <string name="text_comment">Text Comment: </string>
+    <string name="edit_text_comment">Record New Voice Comment: </string>
+    <string name="edit_scratch_comment">Draw New Scratch Comment: </string>
+    <string name="voice_comment">Voice Comment: </string>
+    <string name="play_voice_comment">Play</string>
+    <string name="scratch_comment">Scratch Comment: </string>
+    <string name="option">Option</string>
+    <string name="back">Back</string>
+    <string name="edit">Edit</string>
+    <string name="home">Home</string>
+    <string name="add_comment_here">Add text comment here</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear">Clear</string>
+    <string name="title_activity_scratch">Scratch Drawing</string>
+    <string name="title_activity_login">Login</string>
+
+    <!-- @ruoyul Facebook app id -->
+    <string name="app_id">449762498438737</string>
+    <string name="post">Post on Facebook</string>
+    <string name="title_activity_welcome">Welcome</string>
+    <string name="add_album">Create a new album</string>
+    <string name="share">share</string>
+    <string name="share_nfc">share via NFC</string>
+    <string name="share_bluetooth">share via bluetooth</string>
+    <string name="share_fb">share via Facebook</string>
+    <string name="title_activity_beam">Beam</string>
+    <string name="bluetooth_accept">Accept Bluetooth</string>
+    <string name="title_activity_bluetooth">Bluetooth</string>
+    <string name="title_activity_bluetooth_chat">BluetoothChat</string>
+    <string name="title_activity_device_list">DeviceList</string>
+
+    <!-- bluetooth -->
+    <string name="title_paired_devices">Paired Devices</string>
+    <string name="title_other_devices">Other Available Devices</string>
+    <string name="button_scan">Scan for devices</string>
+    <string name="send">Send</string>
+    <string name="title_connecting">connecting...</string>
+    <string name="title_connected_to">connected to <xliff:g id="device_name">%1$s</xliff:g></string>
+    <string name="title_not_connected">not connected</string>
+
+    <!-- Options Menu -->
+    <string name="secure_connect">Connect a device - Secure</string>
+    <string name="insecure_connect">Connect a device - Insecure</string>
+    <string name="discoverable">Make discoverable</string>
+
+    <!-- ?? -->
+    <string name="not_connected">You are not connected to a device</string>
+    <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Leaving Bluetooth Chat.</string>
+    <string name="scanning">scanning for devices...</string>
+    <string name="select_device">select a device to connect</string>
+    <string name="none_paired">No devices have been paired</string>
+    <string name="none_found">No devices found</string>
+    <string name="save">save</string>
+    <string name="back">album</string>
+
+</resources>

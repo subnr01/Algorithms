@@ -1,0 +1,35 @@
+Make Name:
+Ford
+Model Name:
+FordZTW
+Base price:
+18445
+5
+Color
+Fort Knox Gold Clearcoat Metallic
+Liquid Grey Clearcoat Metallic
+Infra-Red Clearcoat
+Grabber Green Clearcoat Metallic
+Sangria Red Clearcoat Metallic
+French Blue Clearcoat Metallic
+Twilight Blue Clearcoat Metallic
+CD Silver Clearcoat Metallic
+Pitch Black Clearcoat
+Cloud 9 White Clearcoat
+
+Transmission
+automatic
+standard $-815
+
+Brakes
+Standard
+ABS $400
+ABS with Advance Trac $1625
+
+Side Impact Air Bags
+selected $350
+none
+
+Power Moonroof
+selected $595
+none

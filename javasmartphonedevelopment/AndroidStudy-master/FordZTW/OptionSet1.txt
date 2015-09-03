@@ -1,0 +1,55 @@
+OptionSet9
+Color:CD Sliver Clearcoat Metallic
+Transmission:automatic
+Brakes:ABSAT
+SideAirBag:none
+Moonroof:none
+
+OptionSet10
+Color:Grabber Green Clearcoat Metallic
+Transmission:automatic
+Brakes:ABSAT
+SideAirBag:none
+Moonroof:selected
+
+OptionSet11
+Color:Sangria Red Clearcoat Metallic
+Transmission:automatic
+Brakes:ABSAT
+SideAirBag:selected
+Moonroof:none
+
+OptionSet12
+Color:French Blue Clearcoat Metallic
+Transmission:automatic
+Brakes:ABSAT
+SideAirBag:selected
+Moonroof:selected
+
+OptionSet13
+Color:CD Sliver Clearcoat Metallic
+Transmission:manual
+Brakes:standard
+SideAirBag:none
+Moonroof:none
+
+OptionSet14
+Color:Liquid Grey Clearcoat Metallic
+Transmission:manual
+Brakes:standard
+SideAirBag:none
+Moonroof:selected
+
+OptionSet15
+Color:Cloud 9 White Clearcoat
+Transmission:manual
+Brakes:standard
+SideAirBag:selected
+Moonroof:none
+
+OptionSet16
+Color:Grabber Green Clearcoat Metallic
+Transmission:manual
+Brakes:standard
+SideAirBag:selected
+Moonroof:selected

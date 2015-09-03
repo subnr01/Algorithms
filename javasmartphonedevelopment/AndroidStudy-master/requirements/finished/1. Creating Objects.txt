@@ -1,0 +1,45 @@
+Creating Objects
+Part a - Coin Toss
+
+Write a class called Coin. The Coin class should have the following field:
+
+A String named sideUp. The sideUp field will hold either "heads" or "tails" indicating the side of the coin that is facing up.
+
+The Coin class should have the following methods:
+
+A no-arg constructor that randomly determines the side of the coin that is facing up ("heads" or "tails") and initializes the sideUp field accordingly.
+A void method named toss that simulates the tossing of a coin. When the toss method is called, it randomly determines the side of the coin that is facing up ("heads" or "tails") and set the sideUp field accordingly.
+A method named getSideUp that return the value of the sideUp field.
+
+Write a program that demonstrates the Coin class. The program should create an instance of the class and display the side that is initially facing up. Then, use the a loop to toss the coin 20 times. Each time the coin is tossed, display the side that is facing up. The program should keep count of the number of times heads is facing up and the number of times the tails is facing up, and display those values after the loop finishes.
+
+Part b - Parking Ticket Simulator
+
+Create a set of classes simulating a police officer issuing a parking ticket.
+
+Class - ParkedCar has the following responsibilities:
+To know the car's make, model, color, license number and number of minutes the car has been parked.
+
+Class - ParkingMeter
+This class should simulate a parking meter. This class's only responsibility is as follows:
+To know the number of minutes of parking time that has been purchased.
+
+Class - ParkingTicket has the following responsibilites:
+To report the make, model, color and license number of an illegally parked car.
+Report the fine - which is $25.00 for first hour plus $10.00 for each additional hour
+Report the name and badge number of the police officer issuing the ticket.
+
+Class - PoliceOfficer has the following responsibilities:
+To know the name and badge number
+To examine a parked car and parking meter object and determine whether the car's time has expired.
+To issue a parking ticket if the car time has expired. 
+
+Grading Criteria:
+You can score full points if:
+a. Your design satisfies the criteria of using pass by reference in methods between objects. This means inheritance and containment is not used for class relationships.
+b. Following Java Coding Conventions
+c. Code Readability (as suggested in class)
+d. Uses packages (default package does not count)
+e. Code compiles and executes
+f. Adequately Tested (with at least 3 unique test cases covering boundary conditions)
+g. Class diagram is provided (UML usage is not required)

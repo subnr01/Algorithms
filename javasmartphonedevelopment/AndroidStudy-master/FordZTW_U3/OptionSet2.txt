@@ -1,0 +1,27 @@
+Make Name:
+Tesla
+Model Name:
+TeslaZ3
+Base price:
+100230
+5
+Color
+Pitch Black Clearcoat
+Cloud 9 White Clearcoat
+
+Transmission
+automatic
+standard $-1815
+
+Brakes
+Standard
+ABS $1400
+ABS with Advance Trac $4625
+
+Side Impact Air Bags
+selected $1350
+none
+
+Power Moonroof
+selected $1595
+none

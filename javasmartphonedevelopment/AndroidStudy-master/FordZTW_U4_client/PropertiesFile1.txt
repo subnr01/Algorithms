@@ -1,0 +1,17 @@
+CarMake=Toyota
+CarModel=ToyotaLexus
+Baseprice=39990
+OptionSize=4
+Option1=Transmission
+OptionValue1a=automatic
+OptionValue1b=standard $-1029
+Option2=Brakes
+OptionValue2a=Standard
+OptionValue2b=ABS $700
+OptionValue2c=ABS with Advance Trac $1625
+Option3=Side Impact Air Bags
+OptionValue3a=selected $550
+OptionValue3b=none
+Option4=Power Moonroof
+OptionValue4a=selected $995
+OptionValue4b=none

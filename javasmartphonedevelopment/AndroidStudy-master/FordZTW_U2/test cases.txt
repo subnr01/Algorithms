@@ -1,0 +1,275 @@
+The input is from OptionSet0.txt, OptionSet1.txt, OptionSet2.txt, 
+there are 3 different models, one in each file.
+
+I printed the original optionSet and option info, 
+changed the price of an option and print,
+changed the name of an optionSet and print.
+
+I did the test for the tree models from three Make,
+and the output is like below:
+
+Make Ford Model FordZTW's base price is 18445, it includes 5 optionSets:
+Color:
+Fort Knox Gold Clearcoat Metallic price:0.0
+Liquid Grey Clearcoat Metallic price:0.0
+Infra-Red Clearcoat price:0.0
+Grabber Green Clearcoat Metallic price:0.0
+Sangria Red Clearcoat Metallic price:0.0
+French Blue Clearcoat Metallic price:0.0
+Twilight Blue Clearcoat Metallic price:0.0
+CD Silver Clearcoat Metallic price:0.0
+Pitch Black Clearcoat price:0.0
+Cloud 9 White Clearcoat price:0.0
+
+Transmission:
+automatic price:0.0
+standard  price:-815.0
+
+Brakes:
+Standard price:0.0
+ABS  price:400.0
+ABS with Advance Trac  price:1625.0
+
+Side Impact Air Bags:
+selected  price:350.0
+none price:0.0
+
+Power Moonroof:
+selected  price:595.0
+none price:0.0
+
+Total price is: 18445.0
+end of print----------
+
+
+Make Ford Model FordZTW's base price is 18445, it includes 5 optionSets:
+Color:
+Fort Knox Gold Clearcoat Metallic price:0.0
+Liquid Grey Clearcoat Metallic price:0.0
+Infra-Red Clearcoat price:0.0
+Grabber Green Clearcoat Metallic price:0.0
+Sangria Red Clearcoat Metallic price:0.0
+French Blue Clearcoat Metallic price:0.0
+Twilight Blue Clearcoat Metallic price:0.0
+CD Silver Clearcoat Metallic price:0.0
+Pitch Black Clearcoat price:0.0
+Cloud 9 White Clearcoat price:100.0
+
+Transmission:
+automatic price:0.0
+standard  price:-815.0
+
+Brakes:
+Standard price:0.0
+ABS  price:400.0
+ABS with Advance Trac  price:1625.0
+
+Side Impact Air Bags:
+selected  price:350.0
+none price:0.0
+
+Power Moonroof:
+selected  price:595.0
+none price:0.0
+
+Total price is: 18445.0
+end of print----------
+
+
+Make Ford Model FordZTW's base price is 18445, it includes 5 optionSets:
+Color:
+Fort Knox Gold Clearcoat Metallic price:0.0
+Liquid Grey Clearcoat Metallic price:0.0
+Infra-Red Clearcoat price:0.0
+Grabber Green Clearcoat Metallic price:0.0
+Sangria Red Clearcoat Metallic price:0.0
+French Blue Clearcoat Metallic price:0.0
+Twilight Blue Clearcoat Metallic price:0.0
+CD Silver Clearcoat Metallic price:0.0
+Pitch Black Clearcoat price:0.0
+Cloud 9 White Clearcoat price:100.0
+
+Transmission:
+automatic price:0.0
+standard  price:-815.0
+
+Brakes:
+Standard price:0.0
+ABS  price:400.0
+ABS with Advance Trac  price:1625.0
+
+Air Bags:
+selected  price:350.0
+none price:0.0
+
+Power Moonroof:
+selected  price:595.0
+none price:0.0
+
+The reference is null!
+Total price is: 18445.0
+end of print----------
+
+
+Make Toyota Model ToyotaLexus's base price is 39990, it includes 5 optionSets:
+Color:
+French Blue Clearcoat Metallic price:0.0
+Twilight Blue Clearcoat Metallic price:0.0
+CD Silver Clearcoat Metallic price:0.0
+
+Transmission:
+automatic price:0.0
+standard  price:-1029.0
+
+Brakes:
+Standard price:0.0
+ABS  price:700.0
+ABS with Advance Trac  price:1625.0
+
+Side Impact Air Bags:
+selected  price:550.0
+none price:0.0
+
+Power Moonroof:
+selected  price:995.0
+none price:0.0
+
+Total price is: 39990.0
+end of print----------
+
+
+Make Toyota Model ToyotaLexus's base price is 39990, it includes 5 optionSets:
+Color:
+French Blue Clearcoat Metallic price:0.0
+Twilight Blue Clearcoat Metallic price:0.0
+CD Silver Clearcoat Metallic price:0.0
+
+Transmission:
+automatic price:280.0
+standard  price:-1029.0
+
+Brakes:
+Standard price:0.0
+ABS  price:700.0
+ABS with Advance Trac  price:1625.0
+
+Side Impact Air Bags:
+selected  price:550.0
+none price:0.0
+
+Power Moonroof:
+selected  price:995.0
+none price:0.0
+
+Total price is: 39990.0
+end of print----------
+
+
+Make Toyota Model ToyotaLexus's base price is 39990, it includes 5 optionSets:
+Color:
+French Blue Clearcoat Metallic price:0.0
+Twilight Blue Clearcoat Metallic price:0.0
+CD Silver Clearcoat Metallic price:0.0
+
+Trans:
+automatic price:280.0
+standard  price:-1029.0
+
+Brakes:
+Standard price:0.0
+ABS  price:700.0
+ABS with Advance Trac  price:1625.0
+
+Side Impact Air Bags:
+selected  price:550.0
+none price:0.0
+
+Power Moonroof:
+selected  price:995.0
+none price:0.0
+
+The reference is null!
+Total price is: 39990.0
+end of print----------
+
+
+Make Tesla Model TeslaZ3's base price is 100230, it includes 5 optionSets:
+Color:
+Pitch Black Clearcoat price:0.0
+Cloud 9 White Clearcoat price:0.0
+
+Transmission:
+automatic price:0.0
+standard  price:-1815.0
+
+Brakes:
+Standard price:0.0
+ABS  price:1400.0
+ABS with Advance Trac  price:4625.0
+
+Side Impact Air Bags:
+selected  price:1350.0
+none price:0.0
+
+Power Moonroof:
+selected  price:1595.0
+none price:0.0
+
+Total price is: 100230.0
+end of print----------
+
+
+Make Tesla Model TeslaZ3's base price is 100230, it includes 5 optionSets:
+Color:
+Pitch Black Clearcoat price:0.0
+Cloud 9 White Clearcoat price:0.0
+
+Transmission:
+automatic price:0.0
+standard  price:-1815.0
+
+Brakes:
+Standard price:-300.0
+ABS  price:1400.0
+ABS with Advance Trac  price:4625.0
+
+Side Impact Air Bags:
+selected  price:1350.0
+none price:0.0
+
+Power Moonroof:
+selected  price:1595.0
+none price:0.0
+
+Total price is: 100230.0
+end of print----------
+
+
+Make Tesla Model TeslaZ3's base price is 100230, it includes 5 optionSets:
+Color:
+Pitch Black Clearcoat price:0.0
+Cloud 9 White Clearcoat price:0.0
+
+Transmission:
+automatic price:0.0
+standard  price:-1815.0
+
+Brakes:
+Standard price:-300.0
+ABS  price:1400.0
+ABS with Advance Trac  price:4625.0
+
+Side Impact Air Bags:
+selected  price:1350.0
+none price:0.0
+
+Moonroof:
+selected  price:1595.0
+none price:0.0
+
+The reference is null!
+Total price is: 100230.0
+end of print----------
+
+
+

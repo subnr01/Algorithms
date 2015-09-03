@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/EditTextID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Enter Student ID" >
+
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:id="@+id/EditTextQ1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Quiz1 Score" />
+
+            <EditText
+                android:id="@+id/EditTextQ2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Quiz2 Score" />
+
+            <EditText
+                android:id="@+id/EditTextQ3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Quiz3 Score" />
+
+            <EditText
+                android:id="@+id/EditTextQ4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Quiz4 Score" />
+
+            <EditText
+                android:id="@+id/EditTextQ5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Quiz5 Score" />
+
+            <Button
+                    android:id="@+id/addButton"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Record" />
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <EditText
+                android:id="@+id/EditTextDelete"
+                android:layout_width="160sp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter The ID to Delete" />
+                
+                <Button
+                    android:id="@+id/deleteButton"
+                    android:layout_width="160sp"
+                    android:layout_height="wrap_content"
+                    android:text="Delete Record" />
+                
+            </LinearLayout>
+            
+            <Button
+                android:id="@+id/showButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Show All Records" />
+
+
+            <Button
+                android:id="@+id/analyzeButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Analyze" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
