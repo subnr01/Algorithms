@@ -1,0 +1,283 @@
+/**
+
+@mainpage 15-410 Project 3
+
+@author Hongchao Deng (hongchad)
+@author Alan Keith (arkeith)
+
+# Project Description
+
+This is P3 project implementation according to the Pepples Kernel Spec
+and P3 Handout.
+
+This file provides roadmap to understand our kernel and finding specific
+modules.
+
+In this file, we are going to introduce the modules we have written,
+where it is, why we need it, how we implement, and why we implement in
+that way.
+
+## Module
+
+1. Memory
+2. Loader
+3. Scheduling
+4. Processes and threads
+5. Interrupts and syscalls
+6. swexn
+
+Most header files are in 'inc/' directory, however system evolution has led 
+to fragementation of our header files. Originally we intended to have public
+header files in the inc/ directory and private/protected header files in the 
+directory of the relevant functions. As system evolved and code became inter-
+dependent.
+
+### 1. Memory
+
+The memory module is mainly based around the entire 'vm_manager/' directory. It
+provides several basic functionality:
+
+#### 1.1 Frame allocator
+The frame allocator is responsible for reserving and allocating physical
+pages when requested. There're two files "frame_allocator.c" and
+"frame_alloc.c". 
+
+The first one is version of loader which does not rely
+on zfod. It was original used in an older version of memory system, but
+has been kept because some modules are going to instantly write to a page
+or instantly read from a page, in which case it is better to just get
+a page directly rather than using zfod. 
+
+The second one is a new version specifically designed to assist the
+loader, although it also provides some useful functionality for new and
+remove pages. It is the architecture used for zfod allocation.
+
+Both files are used in our memory system.
+
+#### 1.2 Virtual Memory Setup and Finish Functions
+files: vm_installer.c vm_release.c page_cloner.c mapper.c
+These files provides functions of setting up, releasing and cloning virtual
+memory.
+
+#### 1.3 Loader and Virtual Memory Interaction
+files: vmm_loader.c
+This file provides functions for reserving and allocating pages.
+When we designed the checkpoint 3 version of loader, we
+realized that we need a better rollback function for when we ran out of memory.
+Later we also found this is useful in new and remove pages as well.
+
+#### 1.4 Check user virtual memory address
+files: vmm_check.c
+It's used to sanitize arguments passed in the syscall functions.
+There're other extentions based on the argument type.
+
+### 1.5 Necessary Architecture Remnants
+files: page_allocator.c
+Once the core file of our virtual memory system containing all the page 
+allocation functions, this file has had code removed overtime as new 
+implementations and evolutions of the system came about. Now it has
+been pruned back to only two functions which are used extensively
+by the frame allocators.  
+
+
+
+### 2. Loader
+
+The loader module includes the entire 'loader/' and 'mode_switch' directory.
+It's used to load user programs and mainly used function for syscal 'exec'.
+
+#### 2.1 finding executable and getbytes
+file: loader.c
+This file contains the main routine of loader and also provides
+functionality of finding executable and getbytes in that ELF.
+
+#### 2.2 Loading Virtual Memory
+file: loader_vmm.c
+This interacts with the VM module and tries the best to successfully
+load user program while still tolerating failure returns. For example,
+when we don't have enough memory and we fail, we can return a proper
+error message to the exec caller. In older versions of our code
+we had already released the image and were unable to report this
+particular failure.
+
+This will run user program and conduct a mode switch.
+
+
+#### 2.3 User stack preparation
+file: loader_stkprep.c
+Prepares the user stack for the user program to run according ot the libc
+behavior.
+
+#### 2.4 Mode Switch
+file: run_user.S
+
+Originally the hub of our switching code, it has been condensed down to a single
+assembly wrapper which uses iret to switch to user space and run the program.
+
+
+### 3. Scheduling
+
+The Scheduling module interacts tightly with several other modules
+to provide functionality for required syscalls. The used directories
+include almost every file and we will spread discussion over several
+chapters below.
+
+#### 3.1 scheduler
+files: sched/scheduler.c, cpu/cpu.c idle/idle.c
+/** @brief core function for clearing user memory (see vm_release.c)
+This handles the scheduling between threads. It includes adding or
+removing threads in run queue, getting next thread to run, and setting
+idle to run when no thread is running.
+
+#### 3.2 context switch
+files: cpu/cpu.c, conswi/switch_cpustate.S
+When doing scheduling we also need to do context switch when scheduling
+another thread to run.
+
+#### 3.3 kernel synchronization
+files: klock/
+The kernel has a lock and mutex which provides synchronization
+primitives.
+
+#### 3.4 More
+There are more files concerned with scheduling module to support
+functionality to specific syscalls. This includes sleep module, yield
+module, deschedule and make runnable module, etc. We will talk about it
+in syscall chapter.
+
+
+### 4. Processes and threads
+
+#### 4.1 PCB and TCB
+files: pcb/pcb.c tcb/tcb.c
+This provides the structure of pcb of each process or thread, and also
+encapsulates functions to access and modify them.
+
+#### 4.2 Thread Table
+files: tcb/tid_table.c, skiplist/skiplist.c
+When doing scheduling, sometimes we need to find specific thread
+quickly (i.e. yield, make_runnable). We implement a thread table using
+tid as index and underlying skiplist data structure to do fast
+operations on search, insert, remove, etc.
+
+
+### 5. IDT, Interrupts, and Exceptions.
+
+#### 5.1 IDT Entry Installation
+files: idt/
+This encapsulates the operations on installing entries in IDT.
+
+#### 5.2 Interrupts
+files: timer/, keyboard/ in interrupt
+This handles the interrupts coming from timer and keyboard.
+
+#### 5.3 Exceptions
+
+##### 5.3.1 Page fault
+files: exception/pagefault/
+This handles the page fault including allocating new pages on zfod.
+
+##### 5.3.2 all other Exceptions
+files: exception/
+Since I wanna save time I divide other exceptions into two categories:
+The one that has error code and the one that doesn't. We have common
+modules between them in that directory as well.
+
+
+### 6. SYSCALLS
+
+All the syscalls are in 'syscall/' directory. However, based on the
+complication and interaction with other modules, some syscalls use
+other kernel modules and interact tightly with scheduling, virtual
+memory, etc.
+
+Notice that for all syscalls using user memory space, we need to check
+the validity of that space and address the concern of race condition
+(even malicious use) on virtual memory.
+
+In below we will discuss some convoluted ones:
+
+#### 6.1 fork and thread fork
+files: fork/ thread_fork/
+This thing makes assumptions based on the way we do context switch, as
+well as using the interfaces provides in pcb/tcb to make new things
+born.
+
+#### 6.2 exec
+files: exec/
+exec syscall prepares all the argument vectors loader needs to run the
+user program.
+
+#### 6.3 scheduling relevant: yield, make_runnable, deschedule, sleep
+files: 'repeat the name and add /'
+yield and make_runnable will use the thread table.
+sleep will use the sleep queue.
+They all interacts tightly with kernel locking and scheduling (cpu.c,
+  scheduler.c).
+
+
+#### 6.4 new and remove pages
+This interacts with the vmm_loader interfaces since they have the same
+behavior (reserving, allocating and removing pages).
+
+#### 6.5 readline
+This interacts with keyboard.
+
+#### 6.6 readfile
+This ineracts with the getbytes(...) function defined in 'loader.h'
+
+#### 6.7 wait and vanish
+files: wait/wait.c, those named files in syscall directory
+
+In the wait/wait.c we have implemented kernel wait and vanish to better
+encapsulate behavior and eliminate race conditions.
+
+The syscall directory contains the wrapper function that handles trivial
+things before getting to the internal wait and vanish functions.
+
+### 6.8 Swexn
+files: syscall/swexn/
+Everything is explained in swexn.c. Arguments are heavily sanitize and checked
+to ensure the user can't violate kernel space through the handler. We follow
+the basic design principle that so long as the fault does not occur in kernel
+space it is not our problem. A ton of validation is still done to prevent
+kernel crashes in the first place.
+
+
+### 7. Data structure
+
+We have three mainly used data structure here:
+queue/ binheap/ skiplist/
+
+#### 7.1 queue
+This is linked list queue which is used in scheduler run queue, mutex wait
+queue and other things that need a queue.
+
+#### 7.2 binheap
+This is linked list binary heap implementation in order to be scalable
+with the number of threads while still provides functionality of finding
+minimum items quickly (normaly O(lg N) ).
+
+It's used as the sleep queue.
+
+#### 7.3 skiplist
+
+It's used for the thread table. Since we need thread table to do yield
+and we also want it to be fast, I choose to use skiplist, which could be
+implemented using linked list and scalable with number of threads. to
+support the finding specific threads quickly.
+
+It's also used in several other syscalls.
+
+
+
+### 8. Dependencies
+These kernel files depend on the library that's provided by 410kern and
+GCC compiler as per the atomic operations used in klock.
+
+### 9. Time characteristics
+We currently have timer set at 10 ms per tick. We are counting from 0 at 
+the beginning kernels runs at. The sleeping time is counted in this way 
+as well. There is a problem if the kernel runs longer than (2^63-1)*10ms.
+
+*/

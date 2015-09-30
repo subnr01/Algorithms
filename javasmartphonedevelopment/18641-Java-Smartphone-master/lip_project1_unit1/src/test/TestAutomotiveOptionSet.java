@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test;
+package project1unit1.test;
 
 import model.Automotive;
 import util.FileIO;

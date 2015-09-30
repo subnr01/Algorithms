@@ -1,4 +1,4 @@
-package model;
+package project1unit1.model;
 
 import java.io.Serializable;
 import model.OptionSet.Option;

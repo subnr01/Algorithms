@@ -1,0 +1,8 @@
+#!/usr/bin/expect
+
+spawn "simics4"
+
+expect "simics>"
+send "r\n"
+
+interact

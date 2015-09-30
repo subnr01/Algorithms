@@ -1,0 +1,37 @@
+/** @file vmm_spec.dox
+
+This is the documentation file recording all different usage of
+those special mapper pages in various modules. By reviewing this, we can
+eliminate potential race condition in a cleaner way.
+
+loader:
+    VMM_REMAPPER_PAGE, VMM_GET_FORK_OLDPAGE()
+
+fork, clone:
+    Almost all special pages.
+
+new, remove pages:
+    VMM_REMAPPER_PAGE, VMM_GET_FORK_OLDPAGE()
+
+vmm check:
+    VMM_REMAPPER_PAGE
+
+
+The loader and fork both have only one thread when they are being
+called. new and remove pages use VMM_GET_FORK_OLDPAGE() as well. But
+they won't be interleaving with loader and fork because:
+  loader could be only run at one time which is at the very beginning.
+fork could be run if there's only one thread. If there's only one
+thread, how could a thread call new pages and fork simultaneously?
+
+new, remove pages won't be interleaving with each other because there's
+a page lock in each process (which owns private virtual memory). So only
+one thread could enter the critical section and access to those pages.
+
+Another good design is to use one more special page for the purpose of
+new, remove pages.
+
+for vmm check, and everything else that uses VMM_REMAPPER_PAGE:
+  The remap page is saved and restored on each context switch by each thread.
+
+*/
