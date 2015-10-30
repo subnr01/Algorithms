@@ -1,0 +1,7 @@
+
+Operating system 
+
+
+Introduction
+- managing allocation and sharing of hardware resources
+- 

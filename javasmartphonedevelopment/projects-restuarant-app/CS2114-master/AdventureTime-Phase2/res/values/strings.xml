@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">Adventure Time</string>
+    <string name="menu_settings">Settings</string>
+    <string name="adventurescreen_title">Adventure Time</string>
+    <string name="command_hint">Type a command phrase...</string>
+
+</resources>

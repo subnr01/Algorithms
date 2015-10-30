@@ -91,7 +91,7 @@ public class ClientOption extends HttpServlet implements SocketClientConstants {
 
 		}
 		session.setAttribute("modelbaseprice", modelName + "=" + auto.getBasePrice());
-
+		
 		// get option and price from auto
 		LinkedHashMap<String, Float> colorSet = auto.getOptionSetMap("Color");
 		LinkedHashMap<String, Float> tranmmissionSet = auto.getOptionSetMap("Transmission");

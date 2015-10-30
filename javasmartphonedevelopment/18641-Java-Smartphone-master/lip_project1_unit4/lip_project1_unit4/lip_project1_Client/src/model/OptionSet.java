@@ -122,9 +122,6 @@ class OptionSet implements Serializable {
 			System.out.println(i + ". " + op.getOptionName() + ":Price "
 					+ String.format("%.2f", op.getPrice()));
 		}
-		
-		
-
 	}
 
 	/*

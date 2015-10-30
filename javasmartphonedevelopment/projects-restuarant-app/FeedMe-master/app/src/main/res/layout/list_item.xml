@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="@color/cardview_light_background"
+              android:elevation="2dp">
+
+    <RelativeLayout
+        android:id="@+id/compressed"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageCompressed"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="16dp"
+            />
+
+        <TextView
+            android:id="@+id/nameCompressed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageCompressed"
+            android:layout_toRightOf="@+id/imageCompressed"
+            android:paddingBottom="4dp"
+            android:text="@string/restaurantLabel"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/addressCompressed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameCompressed"
+            android:layout_toEndOf="@+id/imageCompressed"
+            android:layout_toRightOf="@+id/imageCompressed"
+            android:paddingBottom="4dp"
+            android:text="@string/addressLabel"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/descriptionCompressed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/addressCompressed"
+            android:layout_toEndOf="@+id/imageCompressed"
+            android:layout_toRightOf="@+id/imageCompressed"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/descriptionLabel"
+            android:textSize="14sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/expanded"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/imageExpandedLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageExpanded"
+                android:layout_width="match_parent"
+                android:layout_height="165dp"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/shadow"
+                android:src="@drawable/shadow"
+                android:scaleType="fitXY"
+                android:layout_alignBottom="@+id/imageExpanded"/>
+
+            <TextView
+                android:id="@+id/nameExpanded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/addressExpanded"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="16dp"
+                android:text="@string/placeholderRestaurantName"
+                android:textColor="#ffffffff"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/addressExpanded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageExpanded"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:text="@string/placeholderAddress"
+                android:textColor="#ffffffff"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/descriptionExpanded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/placeholderDescription"/>
+
+        <View
+            android:id="@+id/divider"
+            style="@style/Divider"
+            />
+
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:padding="4dp"
+            android:weightSum="4"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <com.gc.materialdesign.views.ButtonFlat
+                android:id="@+id/favoriteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/favoriteLabel"
+
+                android:layout_weight="1"
+                android:background="@color/accent"/>
+
+            <com.gc.materialdesign.views.ButtonFlat
+                android:id="@+id/shareButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shareLabel"
+                android:textColor="@color/accent"
+
+                android:layout_weight="1"
+                android:background="@color/accent"/>
+
+            <com.gc.materialdesign.views.ButtonFlat
+                android:id="@+id/directionsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/directionsLabel"
+                android:textColor="@color/accent"
+
+                android:layout_weight="1"
+                android:background="@color/accent"/>
+
+            <com.gc.materialdesign.views.ButtonFlat
+                android:id="@+id/reportButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reportButtonText"
+
+                android:visibility="visible"
+                android:layout_weight="1"
+                android:background="@color/accent"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <View
+        style="@style/Divider"
+        />
+
+</LinearLayout>
