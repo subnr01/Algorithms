@@ -13,10 +13,12 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import java.util.*;
+import android.util.Log;
 
 public class DatabaseConnector {
 
-    public static final String TABLE_NAME = "Mortgage"; // set the table name for app in SQLite
+    public static final String TABLE_NAME = "Mortgage1"; // set the table name for app in SQLite
 
     // set the column name for each column
     public static final String ID = "_id";
@@ -39,6 +41,7 @@ public class DatabaseConnector {
     // public constructor for DatabaseConnector
     public DatabaseConnector(Context context)
     {
+        Log.v("connector", "oncreate");
         // create a new DatabaseOpenHelper
         databaseOpenHelper =
                 new DatabaseOpenHelper(context, TABLE_NAME, null, 1);
@@ -47,6 +50,7 @@ public class DatabaseConnector {
     // open the database connection
     public void open() throws SQLException
     {
+        Log.v("connector", "open");
         // create or open a database for reading/writing
         database = databaseOpenHelper.getWritableDatabase();
     } // end method open
@@ -62,16 +66,18 @@ public class DatabaseConnector {
     private class DatabaseOpenHelper extends SQLiteOpenHelper
     {
         // public constructor
-        public DatabaseOpenHelper(Context context, String name,
-                                  CursorFactory factory, int version)
+        public DatabaseOpenHelper(Context context, String name, CursorFactory factory, int version)
         {
             super(context, name, factory, version);
+            Log.v("openhelper", "constructor");
+
         } // end DatabaseOpenHelper constructor
 
         // creates the mortgage table when the database is created
         @Override
         public void onCreate(SQLiteDatabase db)
         {
+            Log.v("openhelper", "oncreate");
             // query to create a new table named "Mortgage"
             String createQuery = "CREATE TABLE " + TABLE_NAME + " ("
                     + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -101,6 +107,8 @@ public class DatabaseConnector {
         return database.query(TABLE_NAME, new String[] {"_id,name"},
                 null, null, null, null, "name");
     } // end method getAllMortgage
+
+
 
 
     // inserts a new mortgage in the database

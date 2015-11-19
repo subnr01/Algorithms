@@ -1,0 +1,38 @@
+main/java/com/cmu/subu2048/Game.java:26:     * Method will be call when player do some move
+main/java/com/cmu/subu2048/Game.java:28:    void onMove();
+main/java/com/cmu/subu2048/Game.java:193:        boolean moved = false;
+main/java/com/cmu/subu2048/Game.java:198:                moved = slideHorizontal(start, stop, step);
+main/java/com/cmu/subu2048/Game.java:202:                moved = slideVertical(start, stop, step);
+main/java/com/cmu/subu2048/Game.java:206:        if(moved)
+main/java/com/cmu/subu2048/Game.java:211:                observer.onMove();
+main/java/com/cmu/subu2048/Game.java:212:                if (zeroFieldsCount == 0 && !hasPossibleMove())
+main/java/com/cmu/subu2048/Game.java:229:        boolean moved = false;
+main/java/com/cmu/subu2048/Game.java:232:            int moveTo = start;
+main/java/com/cmu/subu2048/Game.java:239:                if(field[i][moveTo] == field[i][j])
+main/java/com/cmu/subu2048/Game.java:241:                    moved = true;
+main/java/com/cmu/subu2048/Game.java:242:                    field[i][moveTo] += field[i][j];
+main/java/com/cmu/subu2048/Game.java:244:                    newScores += field[i][moveTo];
+main/java/com/cmu/subu2048/Game.java:245:                    moveTo += step;
+main/java/com/cmu/subu2048/Game.java:247:                else if(field[i][moveTo] == 0)
+main/java/com/cmu/subu2048/Game.java:249:                    moved = true;
+main/java/com/cmu/subu2048/Game.java:250:                    field[i][moveTo] = field[i][j];
+main/java/com/cmu/subu2048/Game.java:253:                else if(field[i][moveTo] != field[i][j])
+main/java/com/cmu/subu2048/Game.java:255:                    moveTo += step;
+main/java/com/cmu/subu2048/Game.java:256:                    if(moveTo != j)
+main/java/com/cmu/subu2048/Game.java:263:        return moved;
+main/java/com/cmu/subu2048/Game.java:267:        boolean moved = false;
+main/java/com/cmu/subu2048/Game.java:270:            int moveTo = start;
+main/java/com/cmu/subu2048/Game.java:277:                if(field[moveTo][j] == field[i][j])
+main/java/com/cmu/subu2048/Game.java:279:                    moved = true;
+main/java/com/cmu/subu2048/Game.java:280:                    field[moveTo][j] += field[i][j];
+main/java/com/cmu/subu2048/Game.java:282:                    newScores += field[moveTo][j];
+main/java/com/cmu/subu2048/Game.java:283:                    moveTo += step;
+main/java/com/cmu/subu2048/Game.java:285:                else if(field[moveTo][j] == 0)
+main/java/com/cmu/subu2048/Game.java:287:                    moved = true;
+main/java/com/cmu/subu2048/Game.java:288:                    field[moveTo][j] = field[i][j];
+main/java/com/cmu/subu2048/Game.java:291:                else if(field[moveTo][j] != field[i][j])
+main/java/com/cmu/subu2048/Game.java:293:                    moveTo += step;
+main/java/com/cmu/subu2048/Game.java:294:                    if(moveTo != i)
+main/java/com/cmu/subu2048/Game.java:301:        return moved;
+main/java/com/cmu/subu2048/Game.java:304:    private boolean hasPossibleMove()
+main/java/com/cmu/subu2048/MainActivity.java:139:    public void onMove()

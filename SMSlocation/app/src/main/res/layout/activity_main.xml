@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/mainpage_down_linearlayout"
+        android:weightSum="1"
+        android:layout_marginTop="50dp">
+
+
+        <TableRow android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:weightSum="1">
+            <TextView android:id="@+id/longitute_LabelTextView"
+                android:text="Longitude"
+                android:layout_width="wrap_content"
+                android:textSize="25dp"
+                android:layout_column="0"
+                android:layout_height="wrap_content"
+                android:textColor="#ee0e0e"
+                android:background="#f6db09"></TextView>
+                <TextView android:id="@+id/longtitude_TextView"
+                android:layout_width="260dp"
+                android:layout_height="61dp"
+                android:layout_column="1"
+                android:textSize="20dp"
+                    android:background="#06f7eb"
+                    android:layout_marginLeft="11dp"
+                    android:textColor="#090000"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:weightSum="1">
+            <TextView android:id="@+id/latitude_LabelTextView"
+                android:text="Latitude"
+                android:layout_width="wrap_content"
+                android:textSize="25dp"
+                android:layout_column="0"
+                android:layout_height="wrap_content"
+                android:textColor="#f80505"
+                android:background="#f6db09"></TextView>
+            <TextView android:id="@+id/latitute_TextView"
+                android:layout_width="264dp"
+                android:layout_height="61dp"
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:layout_marginLeft="30dp"
+                android:background="#06f7eb"
+                android:textColor="#080000"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:weightSum="1">
+            <TextView android:id="@+id/altitude_LabelTextView"
+                android:text="Altitude"
+                android:layout_width="wrap_content"
+                android:textSize="25dp"
+                android:layout_column="0"
+                android:layout_height="wrap_content"
+                android:textColor="#f60101"
+                android:background="#f6db09"></TextView>
+            <TextView android:id="@+id/altitude_TextView"
+                android:layout_width="266dp"
+                android:layout_height="61dp"
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:layout_marginLeft="35dp"
+                android:background="#06f7eb"
+                android:textColor="#080000"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send SMS"
+            android:id="@+id/go_button"
+            android:layout_gravity="center_horizontal"
+            android:background="#f3550c" />
+
+    </LinearLayout>
+
+</LinearLayout>

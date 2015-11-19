@@ -1,0 +1,326 @@
+package com.cmu.subu2048.Game.game2048;
+
+import android.os.Parcelable;
+import java.util.Random;
+import android.os.Parcel;
+import android.util.Log;
+
+
+
+/**
+ * interface to track game state changes
+ */
+interface GameStateObserver
+{
+    enum Status {
+        STARTED, FINISHED
+    }
+
+    /**
+     * Method will be call when scores are changed
+     * @param scores new scores value
+     */
+    void onScoresChanged(int scores);
+
+    /**
+     * Method will be call when player do some move
+     */
+    void onMove();
+
+    /**
+     * Method will be call when status of game changes
+     */
+    void onStatusChanged(Status newStatus);
+
+}
+
+/**
+ * Class, representing all logic for the game
+ */
+public class Game  implements Parcelable {
+    private enum Destination {
+        LEFT, RIGHT, UP, DOWN
+    }
+
+    private final int FieldSize = 4;
+
+    final Random random = new Random();
+
+    private int[][] field;
+    int oldScores, newScores;
+
+    GameStateObserver observer;
+
+    Game()
+    {
+    }
+
+    public void init(GameStateObserver observer)
+    {
+        field = new int[FieldSize][FieldSize];
+        int InitialRandomValuesCount = 3;
+        makeRandomField(InitialRandomValuesCount);
+        oldScores = newScores = 0;
+        initObserver(observer);
+        observer.onStatusChanged(GameStateObserver.Status.STARTED);
+    }
+
+    public void initObserver(GameStateObserver observer)
+    {
+        this.observer = observer;
+        if (observer != null)
+        {
+            observer.onScoresChanged(newScores);
+        }
+    }
+
+    public int describeContents() {
+        return 0;
+    }
+
+    public void writeToParcel(Parcel parcel, int flags) {
+        parcel.writeInt(oldScores);
+        parcel.writeInt(newScores);
+        for(int i=0; i<FieldSize; ++i)
+        {
+            parcel.writeIntArray(field[i]);
+        }
+    }
+
+    public static final Parcelable.Creator<Game> CREATOR = new Parcelable.Creator<Game>() {
+        public Game createFromParcel(Parcel in) {
+            return new Game(in);
+        }
+
+        public Game[] newArray(int size) {
+            return new Game[size];
+        }
+    };
+
+    public Game(Parcel parcel) {
+        oldScores = parcel.readInt();
+        newScores = parcel.readInt();
+        field = new int[FieldSize][FieldSize];
+        for(int i=0; i<FieldSize; ++i)
+        {
+            parcel.readIntArray(field[i]);
+        }
+    }
+
+    public int[][] getField()
+    {
+        return field;
+    }
+
+    public int getFieldSize()
+    {
+        return FieldSize;
+    }
+
+    private int makeRandomField()
+    {
+        return makeRandomField(1);
+    }
+    private int makeRandomField(int fieldCount)
+    {
+        int zeroValuesFieldsCount = 0;
+        for(int i=0; i<FieldSize; ++i)
+        {
+            for(int j=0; j<FieldSize; ++j)
+            {
+                if(field[i][j] == 0) zeroValuesFieldsCount++;
+            }
+        }
+
+        if (zeroValuesFieldsCount < fieldCount) return 0;
+        for(int generated = 0; generated<fieldCount; ++generated)
+        {
+            int i, j;
+            do {
+                i = random.nextInt(4);
+                j = random.nextInt(4);
+            } while(field[i][j] != 0);
+            int value = random.nextInt(100);
+            if (value < 66) value = 2;  //66% probability to "2" value
+            else if (value < 99) value = 4;  //33% probability to "4" value
+            else value = 8; //1 % probability to "8" value
+            field[i][j] = value;
+        }
+        return zeroValuesFieldsCount - fieldCount;
+    }
+
+    public void slideLeft() {
+        Log.d("Subbu", "slide left");
+        slide(Destination.LEFT);
+    }
+
+    public void slideRight() {
+        Log.d("Subbu", "slide right");
+        slide(Destination.RIGHT);
+    }
+
+    public void slideDown() {
+        Log.d("Subbu", "slide down");
+        slide(Destination.DOWN);
+    }
+
+    public void slideUp() {
+        Log.d("Subbu", "slide up");
+        slide(Destination.UP);
+    }
+
+    private void slide(Destination dest)
+    {
+        int start, stop, step;
+        switch(dest)
+        {
+            case LEFT:
+            case UP:
+                start = 0;
+                stop = 3;
+                step = 1;
+                break;
+            case RIGHT:
+            case DOWN:
+                start=3;
+                stop=0;
+                step=-1;
+                break;
+            default:
+                throw new UnknownError("Unexpected value");
+        }
+
+        boolean moved = false;
+        switch(dest)
+        {
+            case LEFT:
+            case RIGHT:
+                moved = slideHorizontal(start, stop, step);
+                break;
+            case DOWN:
+            case UP:
+                moved = slideVertical(start, stop, step);
+                break;
+        }
+
+        if(moved)
+        {
+            int zeroFieldsCount = makeRandomField();
+            if (observer != null)
+            {
+                observer.onMove();
+                if (zeroFieldsCount == 0 && !hasPossibleMove())
+                {
+                    observer.onStatusChanged(GameStateObserver.Status.FINISHED);
+                }
+            }
+            if (newScores != oldScores)
+            {
+                oldScores = newScores;
+                if (observer != null)
+                {
+                    observer.onScoresChanged(newScores);
+                }
+            }
+        }
+    }
+
+    private boolean slideHorizontal(int start, int stop, int step) {
+        boolean moved = false;
+        for(int i=0; i<FieldSize; ++i)
+        {
+            int moveTo = start;
+            for(int j=start+step; j!=stop+step; j+=step)
+            {
+                if(field[i][j] == 0)
+                {
+                    continue; //skip to next iteration
+                }
+                if(field[i][moveTo] == field[i][j])
+                {
+                    moved = true;
+                    field[i][moveTo] += field[i][j];
+                    field[i][j]=0;
+                    newScores += field[i][moveTo];
+                    moveTo += step;
+                }
+                else if(field[i][moveTo] == 0)
+                {
+                    moved = true;
+                    field[i][moveTo] = field[i][j];
+                    field[i][j]=0;
+                }
+                else if(field[i][moveTo] != field[i][j])
+                {
+                    moveTo += step;
+                    if(moveTo != j)
+                    {
+                        j-=step;
+                    }
+                }
+            }
+        }
+        return moved;
+    }
+
+    private boolean slideVertical(int start, int stop, int step) {
+        boolean moved = false;
+        for(int j=0; j<FieldSize; ++j)
+        {
+            int moveTo = start;
+            for(int i=start+step; i!=stop+step; i+=step)
+            {
+                if(field[i][j] == 0)
+                {
+                    continue; //skip to next iteration
+                }
+                if(field[moveTo][j] == field[i][j])
+                {
+                    moved = true;
+                    field[moveTo][j] += field[i][j];
+                    field[i][j]=0;
+                    newScores += field[moveTo][j];
+                    moveTo += step;
+                }
+                else if(field[moveTo][j] == 0)
+                {
+                    moved = true;
+                    field[moveTo][j] = field[i][j];
+                    field[i][j]=0;
+                }
+                else if(field[moveTo][j] != field[i][j])
+                {
+                    moveTo += step;
+                    if(moveTo != i)
+                    {
+                        i-=step;
+                    }
+                }
+            }
+        }
+        return moved;
+    }
+
+    private boolean hasPossibleMove()
+    {
+        //this method suppose that there are no zero values at the field
+        //in normal using, this method will be called only if all values are not zero
+        for(int i=0; i<FieldSize; ++i)
+        {
+            for(int j=1; j<FieldSize; ++j)
+            {
+                if(field[i][j] == field[i][j-1])
+                    return true;
+            }
+        }
+        for(int j=0; j<FieldSize; ++j)
+        {
+            for(int i=1; i<FieldSize; ++i)
+            {
+                if(field[i][j] == field[i-1][j])
+                    return true;
+            }
+        }
+        return false;
+    }
+}

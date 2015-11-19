@@ -22,6 +22,7 @@ import android.os.AsyncTask;
 import lip.cmu.com.mortgage.calculator.AddMortgage;
 import lip.cmu.com.mortgage.database.DatabaseConnector;
 import lip.cmu.com.mortgage.R;
+import android.util.Log;
 
 
 public class MainPage extends ListActivity {
@@ -36,6 +37,7 @@ public class MainPage extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Log.v("main", "starting ");
         // set the list view
         MortgageListView = getListView();
         MortgageListView.setOnItemClickListener(viewMortgageListener);
@@ -45,6 +47,7 @@ public class MainPage extends ListActivity {
         int[] to  = new int[] {R.id.mainPageTextView};
         MortgageAdapter = new SimpleCursorAdapter(MainPage.this, R.layout.activity_main_page,null,from,to);
         setListAdapter(MortgageAdapter);
+        Log.v("main", "ended ");
 
     }
     @Override
@@ -67,6 +70,7 @@ public class MainPage extends ListActivity {
         @Override
         protected Cursor doInBackground(Object... params)
         {
+            Log.v("background", "background");
             databaseConnector.open();
 
             // get a cursor containing all mortgage
@@ -122,7 +126,7 @@ public class MainPage extends ListActivity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-            // jumpt to ViewMortgage
+            // jump to ViewMortgage
             Intent viewMortgage = new Intent(MainPage.this,ViewMortgage.class);
 
             viewMortgage.putExtra(ROW_ID,id);
