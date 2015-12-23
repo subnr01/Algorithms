@@ -16,70 +16,44 @@ This method is also dependent on Floyd’s Cycle detection algorithm.
 
 */
 
+/*
+Method 3 Effecient
+*/
 
-int detectAndRemoveLoop(struct node *list)
+void detectAndRemoveLoop(Node *head)
 {
-    struct node  *slow_p = list, *fast_p = list;
+    Node *slow = head;
+    Node *fast = head->next;
  
-    while (slow_p && fast_p && fast_p->next)
+    // Search for loop using slow and fast pointers
+    while (fast && fast->next)
     {
-        slow_p = slow_p->next;
-        fast_p  = fast_p->next->next;
+        if (slow == fast)
+            break;
+        slow = slow->next;
+        fast = fast->next->next;
+    }
  
-        /* If slow_p and fast_p meet at some point then there
-           is a loop */
-        if (slow_p == fast_p)
+    /* If loop exists */
+    if (slow == fast)
+    {
+        slow = head;
+        while (slow != fast->next)
         {
-            removeLoop(slow_p, list);
- 
-            /* Return 1 to indicate that loop is found */
-            return 1;
+            slow = slow->next;
+            fast = fast->next;
         }
-    }
  
-    /* Return 0 to indeciate that ther is no loop*/
-    return 0;
+        /* since fast->next is the looping point */
+        fast->next = NULL; /* remove loop */
+    }
 }
 
-
-/* Function to remove loop.
- loop_node --> Pointer to one of the loop nodes
- head -->  Pointer to the start node of the linked list */
-void removeLoop(struct node *loop_node, struct node *head)
-{
-    struct node *ptr1 = loop_node;
-    struct node *ptr2 = loop_node;
+    
+    
+    
+    
+    
+    
  
-    // Count the number of nodes in loop
-    unsigned int k = 1, i;
-    while (ptr1->next != ptr2)
-    {
-        ptr1 = ptr1->next;
-        k++;
-    }
- 
-    // Fix one pointer to head
-    ptr1 = head;
- 
-    // And the other pointer to k nodes after head
-    ptr2 = head;
-    for(i = 0; i < k; i++)
-      ptr2 = ptr2->next;
- 
-    /*  Move both pointers at the same pace,
-      they will meet at loop starting node */
-    while(ptr2 != ptr1)
-    {
-        ptr1 = ptr1->next;
-        ptr2 = ptr2->next;
-    }
- 
-    // Get pointer to the last node
-    ptr2 = ptr2->next;
-    while(ptr2->next != ptr1)
-       ptr2 = ptr2->next;
- 
-    /* Set the next node of the loop ending node
-      to fix the loop */
-    ptr2->next = NULL;
-}
+   
