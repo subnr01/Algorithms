@@ -31,9 +31,9 @@ struct node* doubly_bst( struct node **head, int n)
 
 	root->left = left;        //assigned the left child
 
-	*head = *head->next;      //Now we point to the right child
+	*head = *head->right;      //Now we point to the right child
 
-	root->next = doubly_bst(head, n-n/2-1); //returns the right child
+	root->right = doubly_bst(head, n-n/2-1); //returns the right child
 
 	return root;
 
