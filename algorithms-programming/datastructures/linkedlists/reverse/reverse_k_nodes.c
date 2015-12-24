@@ -20,15 +20,15 @@ struct node* reverse_k_nodes( struct node *head, int k)
 
 	int n = k;
 	struct node *current = head;
-	struct node *prev;
+	struct node *prev = NULL;
 	struct node *next;
 
-	while (current ! = NULL || n < 0)
+	while (current != NULL && n > 0)
 	{
 		next = current->next;
 		current->next = prev;
 		prev = current;
-		current = current->next;
+		current = next;
 		n--;
 	}
 
