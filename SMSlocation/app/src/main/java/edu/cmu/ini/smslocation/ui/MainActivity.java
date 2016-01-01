@@ -1,5 +1,10 @@
 package edu.cmu.ini.smslocation.ui;
 
+/**
+ * Subramanian Natarajan
+ * snatara1
+ */
+
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,7 +27,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private Button button;
 
-    private TextView longitude_TV,latitude_TV,altitude_TV;
+    private TextView longitude;
+    private TextView latitude;
+    private TextView altitude;
 
     private LocationManager locationManager;
     private Location location;
@@ -38,27 +45,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
 
 
-        // set button and button listener
         button = (Button)findViewById(R.id.go_button);
         button.setOnClickListener(MainActivity.this);
 
 
-        // set text view for location
-        longitude_TV = (TextView)findViewById(R.id.longtitude_TextView);
-        latitude_TV = (TextView)findViewById(R.id.latitute_TextView);
-        altitude_TV = (TextView)findViewById(R.id.altitude_TextView);
+        longitude = (TextView)findViewById(R.id.longtitude_TextView);
+        latitude = (TextView)findViewById(R.id.latitute_TextView);
+        altitude = (TextView)findViewById(R.id.altitude_TextView);
 
-        // set location manager and location
         locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         location = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
 
 
-        // update once to show the current location
         updateLocation(location);
 
 
-        // set location manager listener for updata position
-        // in real time
+
         locationManager.requestLocationUpdates(locationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
@@ -66,7 +68,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
 
 
-            // this is used when the location is changed, update the display of location
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {
                 updateLocation(locationManager.getLastKnownLocation(provider));
@@ -89,8 +90,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         SmsManager smsManager = SmsManager.getDefault();
-        //if location is null, display a fail toast
-        // or send the location to the TELNUM and display success toast
+       
 
         if (location == null){
             Toast.makeText(MainActivity.this, "No Location Service!", Toast.LENGTH_LONG).show();
@@ -103,10 +103,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private void updateLocation(Location loc) {
 
-        // if location is null, get the location
-        // build the textview and message string
-
-        // or log the exception
+        
         if(loc != null){
             StringBuilder longitude_sb = new StringBuilder();
             StringBuilder latitude_sb = new StringBuilder();
@@ -114,9 +111,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             longitude_sb.append(location.getLongitude());
             latitude_sb.append(location.getLatitude());
             altitude_sb.append(location.getAltitude());
-            longitude_TV.setText(longitude_sb.toString());
-            latitude_TV.setText(latitude_sb.toString());
-            altitude_TV.setText(altitude_sb.toString());
+            longitude.setText(longitude_sb.toString());
+            latitude.setText(latitude_sb.toString());
+            altitude.setText(altitude_sb.toString());
             msg = longitude_sb.toString() + "||" +latitude_sb.toString()+ "||" + altitude_sb.toString();
         }else{
             new AppException("No Location Service!");
