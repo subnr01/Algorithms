@@ -1,0 +1,41 @@
+
+============================================================================
+vector
+
+Container properties:
+Sequence: Elements are accessed by their position in this sequence.
+Dynamic Array: direct access to any element. insertion and deletion is efficient only at the end
+Allocator-aware: The container uses an allocator object for its storage needs.
+
+Methods:
+Insert:  O(n)
+Erase:   O(n)
+Size:   O(1)
+Empty:  O(1)
+Emplace: O(n)
+Swap: O(1)
+resize: O(n)
+============================================================================
+list
+
+
+============================================================================
+map
+
+
+============================================================================
+unordered_map
+
+============================================================================
+multimap
+
+
+set
+
+
+multiset
+
+
+unordered Set
+
+
