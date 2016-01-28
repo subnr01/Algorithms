@@ -13,6 +13,10 @@ LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4
 */
 
 
+LOOK at the LINK
+https://www.ics.uci.edu/~eppstein/161/960229.html
+
+
 /* 
 
 Optimal substructure
