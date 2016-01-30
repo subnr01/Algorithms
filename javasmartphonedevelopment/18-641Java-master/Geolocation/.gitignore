@@ -1,8 +1,0 @@
-*.jar
-*.class
-/bin/**
-/build/**
-.project
-.metadata
-.classpath
-.settings/

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- From: file:/Users/admin/GITHUB/Algorithms/javasmartphonedevelopment/projects-restuarant-app/FeedMe-master/ParseLoginUI/build/intermediates/bundles/debug/res/values-v19/values.xml -->
-    <eat-comment/>
-    <style name="ParseLoginUI" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowTranslucentStatus">true</item>
-    </style>
-</resources>

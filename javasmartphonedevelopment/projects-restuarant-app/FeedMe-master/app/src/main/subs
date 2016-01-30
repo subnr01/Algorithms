@@ -1,3 +1,0 @@
-java/com/thavelka/feedme/AdminActivity.java:41:        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-java/com/thavelka/feedme/BaseActivity.java:78:        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-java/com/thavelka/feedme/NewListingActivity.java:75:        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
