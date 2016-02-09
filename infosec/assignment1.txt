@@ -39,3 +39,5 @@ uid                  Subramanian (Generating key) <snatara1@andrew.cmu.edu>
 sub   2048g/B2E88B4B 2016-02-09
 
 
+====================================================
+if you use PGP/MIME and do encrypt, the *whole* message (including body and attachments) is encrypted. While it still is a valid PGP/MIME message if only some MIME parts are encrypted (see mailman processed posts), it doesn't make much sense to purposely create such emails, does it? I mean: either you want its content be protected or not. If you only want to encrypt the body but not the attachments or vice versa, you still can use INLINE PGP. 
