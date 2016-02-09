@@ -14,7 +14,28 @@ uid                  Adwiteeya Agrawal <adwiteea@andrew.cmu.edu>
 sub   2048R/F21CCC72 2016-01-28 [expires: 2021-01-26]
 
 
-Once you have someone's public key, perhaps obtained from a keyserver or an FTP or Web site, you still don't know that the key is genuine: you have to trust the source.
+Once you have someone's public key, perhaps obtained from a keyserver or an FTP or Web site, 
+you still don't know that the key is genuine: you have to trust the source.
 
-You can then compare it with the fingerprint extracted from the purportedly-identical public key on your keyring with either PGP or GnuPG
-If they match, and if you have reason to believe that the person who sent you the key was indeed the key owner, then the public key has more trust that it had before.
+You can then compare it with the fingerprint extracted from the purportedly-identical public key 
+on your keyring with either PGP or GnuPG
+
+If they match, and if you have reason to believe that the person who sent you the key was indeed the
+key owner, then the public key has more trust that it had before.
+
+
+parallels@ubuntu:~$ gpg --list-keys
+/home/parallels/.gnupg/pubring.gpg
+----------------------------------
+pub   1024D/5072E1F5 2003-02-03 [expires: 2017-02-16]
+uid                  MySQL Release Engineering <mysql-build@oss.oracle.com>
+
+pub   2048R/FE67CA73 2016-01-28 [expires: 2021-01-26]
+uid                  Adwiteeya Agrawal <adwiteea@andrew.cmu.edu>
+sub   2048R/F21CCC72 2016-01-28 [expires: 2021-01-26]
+
+pub   2048D/28F109AA 2016-02-09
+uid                  Subramanian (Generating key) <snatara1@andrew.cmu.edu>
+sub   2048g/B2E88B4B 2016-02-09
+
+
