@@ -1,0 +1,14 @@
+parallels@ubuntu:~$ ./download.sh 0xFE67CA73
+-rw-rw-r-- 1 parallels parallels 2337 Feb  8 22:58 /tmp/pgp-0xFE67CA73.tmp.30703
+Try:	pgp -ka /tmp/pgp-0xFE67CA73.tmp.30703
+    	pgpgpg -ka /tmp/pgp-0xFE67CA73.tmp.30703
+    	rm -f /tmp/pgp-0xFE67CA73.tmp.30703
+parallels@ubuntu:~$ pgp -ka /tmp/pgp-0xFE67CA73.tmp.30703
+gpg: key FE67CA73: public key "Adwiteeya Agrawal <adwiteea@andrew.cmu.edu>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+parallels@ubuntu:~$ pgp -kvc 0xFE67CA73
+pub   2048R/FE67CA73 2016-01-28 [expires: 2021-01-26]
+      Key fingerprint = 32EB 122D B3CA 5FA4 04DD  12CB 74C1 BB21 FE67 CA73
+uid                  Adwiteeya Agrawal <adwiteea@andrew.cmu.edu>
+sub   2048R/F21CCC72 2016-01-28 [expires: 2021-01-26]
