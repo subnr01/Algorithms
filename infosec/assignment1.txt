@@ -12,3 +12,9 @@ pub   2048R/FE67CA73 2016-01-28 [expires: 2021-01-26]
       Key fingerprint = 32EB 122D B3CA 5FA4 04DD  12CB 74C1 BB21 FE67 CA73
 uid                  Adwiteeya Agrawal <adwiteea@andrew.cmu.edu>
 sub   2048R/F21CCC72 2016-01-28 [expires: 2021-01-26]
+
+
+Once you have someone's public key, perhaps obtained from a keyserver or an FTP or Web site, you still don't know that the key is genuine: you have to trust the source.
+
+You can then compare it with the fingerprint extracted from the purportedly-identical public key on your keyring with either PGP or GnuPG
+If they match, and if you have reason to believe that the person who sent you the key was indeed the key owner, then the public key has more trust that it had before.
