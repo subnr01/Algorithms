@@ -1,0 +1,41 @@
+[snatara1@unix1 eve]$ ./evilize hello-erase -g good -e evil
+Initial vector: 0x631e59ad 0x4dbbf99c 0x4c0ffa24 0x97744577
+Searching for MD5 collision (this can take several hours)...
+Random seed: 692635910
+Progress: 149.314.986.18
+Collision blocks:
+unsigned int m0[32] = {
+0x5be6df72, 0x1d72be85, 0xb8158010, 0x82fcf8ec,
+0x112d4537, 0x00e12299, 0xe129a369, 0x0c11db39,
+0x06342d55, 0xa473ca0a, 0x8762fa7b, 0x9e017f35,
+0x9ba3e0fb, 0x24c049f2, 0x75f38211, 0xd816e6eb,
+0x49f5e610, 0xfd74b03d, 0x5cd316ef, 0xacc41269,
+0xc6589088, 0x0e016298, 0x06f6d548, 0x9f14a4cf,
+0xb7bb2fdd, 0xebfa91b9, 0xbd834cae, 0x500ad08f,
+0x89e15cef, 0x25700146, 0xe9b34bea, 0xe4fbb8ab,
+};
+
+unsigned int m1[32] = {
+0x5be6df72, 0x1d72be85, 0xb8158010, 0x82fcf8ec,
+0x912d4537, 0x00e12299, 0xe129a369, 0x0c11db39,
+0x06342d55, 0xa473ca0a, 0x8762fa7b, 0x9e01ff35,
+0x9ba3e0fb, 0x24c049f2, 0xf5f38211, 0xd816e6eb,
+0x49f5e610, 0xfd74b03d, 0x5cd316ef, 0xacc41269,
+0x46589088, 0x0e016298, 0x06f6d548, 0x9f14a4cf,
+0xb7bb2fdd, 0xebfa91b9, 0xbd834cae, 0x500a508f,
+0x89e15cef, 0x25700146, 0x69b34bea, 0xe4fbb8ab,
+};
+
+Writing 'good' file good.
+Writing 'evil' file evil.
+[snatara1@unix1 eve]$
+
+[snatara1@unix1 eve]$ md5sum good
+6f3c7be951b7766cfda1e87809dfa218  good
+[snatara1@unix1 eve]$ md5sum evil
+6f3c7be951b7766cfda1e87809dfa218  evil
+[snatara1@unix1 eve]$
+[snatara1@unix1 eve]$ diff good evil >subs.txt
+[snatara1@unix1 eve]$ ls -l subs.txt
+-rw-r--r-- 1 snatara1 users 34 Feb 10 20:02 subs.txt
+[snatara1@unix1 eve]$
