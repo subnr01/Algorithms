@@ -15,6 +15,7 @@ void sort(struct node **head)
 	struct node *two;
 
 	struct node *temp1 = *head;
+	struct node *temp = NULL;
 
 	while(temp1 != NULL)
 	{
@@ -37,6 +38,7 @@ void sort(struct node **head)
 
 	join(zero,one);
 	join(zero,two);	
+	*head  = zero;
 
 }
 
