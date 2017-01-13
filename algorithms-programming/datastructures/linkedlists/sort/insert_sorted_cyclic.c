@@ -7,23 +7,28 @@ sorted list. The given node can be any single node in the list.
 */
 
 
-void insert(Node *& aNode, int x) {
-  if (!aNode) {
-    aNode = new Node(x);
-    aNode->next = aNode;
+void insert(Node ** head, int x) {
+  if (!head) {
+    *head = new Node(x);
+    (*aNode)->next = *(head);
     return;
   }
  
-  Node *p = aNode;
-  Node *prev = NULL;
-  do {
-    prev = p;
-    p = p->next;
-    if (x <= p->data && x >= prev->data) break;   // For case 1)
-    if ((prev->data > p->data) && (x < p->data || x > prev->data)) break; // For case 2)
-  } while (p != aNode);   // when back to starting point, then stop. For case 3)
+  Node *first = (*head);
+  Node *second = (*head)->next;
+  while(second != head)
+  {
+    if (x <= first->data && x >= second->data) break;   // For case 1)
+    first = second;
+    second = second->next;
+  
+  } 
  
   Node *newNode = new Node(x);
-  newNode->next = p;
-  prev->next = newNode;
+  newNode->next = second;
+  first->next = newNode;
+  
+  if (x <= second->data) {
+    *head = newNode;
+  }
 }
