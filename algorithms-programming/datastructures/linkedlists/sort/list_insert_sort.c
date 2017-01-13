@@ -18,7 +18,7 @@ void insertSort(struct node **head, int elem)
         }
         struct node *first = *head;
 
-        while (first->next != NULL && first->next->data > temp->data)
+        while (first->next != NULL && first->next->data < temp->data)
         {
                 first = first->next;
 
