@@ -30,7 +30,7 @@ void sort(struct node **head)
 		{
 			append(&one,temp);
 		}
-		if (temp->data == 0)
+		if (temp->data == 2)
 		{
 			append(&two,temp);
 		}
