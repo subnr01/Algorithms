@@ -24,20 +24,20 @@ void AlternatingSplit ( struct node *head, struct node **head1, struct node **he
 	*head2 = b;
 }
 
-void MoveNode(struct node** destRef, struct node** sourceRef) 
+void MoveNode(struct node** dest, struct node** head) 
 {
   /* the front source node  */
-  struct node* newNode = *sourceRef; 
+  struct node* newNode = *head; 
   assert(newNode != NULL);
    
   /* Advance the source pointer */
-  *sourceRef = newNode->next;
+  *head = newNode->next;
    
   /* Link the old dest off the new node */
-  newNode->next = *destRef; 
+  newNode->next = *dest; 
    
   /* Move dest to point to the new node */
-  *destRef = newNode; 
+  *dest = newNode; 
 }
 
 
