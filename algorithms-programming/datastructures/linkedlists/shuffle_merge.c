@@ -21,8 +21,11 @@ struct node *ShuffleMerge(struct node *head1, struct node *head2)
 		start = head1;
 		head1 = head1->next;
 		start->next = head2;
+		
+		/* this step is important */
 		start = head2;
-		head1 = head2->next;
+		
+		head2 = head2->next;
 	}	
 	if(head1)
 	{
@@ -47,6 +50,7 @@ struct node *ShuffleMerge_r(struct node *head1, struct node *head2)
 		return head1;
 	else
 	{
+		/* what happens when null is returned */
 		struct node *recur = ShuffleMerge_r(head1->next, head2->next);
 		struct node *result = head1;
 		head1->next = head2;
