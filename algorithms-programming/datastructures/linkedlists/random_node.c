@@ -6,7 +6,8 @@ to any node in the list and not just the previous node. Now write a program in
 O(n) time to duplicate this list. That is, write a program which will create a
 copy of this list.
 
-
+http://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
+http://www.geeksforgeeks.org/clone-linked-list-next-arbit-pointer-set-2/
 */
 
 
