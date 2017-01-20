@@ -12,14 +12,14 @@ void reverse_r(struct node **head)
 		return;
 
 	struct node *first = *head;
-	struct node *last = NULL;
-	last = first->next;
-	if (!last)
+	struct node *second = NULL;
+	second = first->next;
+	if (!second)
 		return;
-	reverse_r(&last);
+	reverse_r(&second);
 
-	last->next=first;
+	first->next->next=first;
 	first->next = NULL;
 
-	*head = last;
+	*head = second;
 }
