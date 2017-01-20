@@ -76,3 +76,33 @@ bool isTripletPresent(node *root)
     return false;
 }
  
+// A function to convert given BST to Doubly Linked List. left pointer is used
+// as previous pointer and right pointer is used as next pointer. The function
+// sets *head to point to first and *tail to point to last node of converted DLL
+void convertBSTtoDLL(node* root, node** head, node** tail)
+{
+    // Base case
+    if (root == NULL)
+        return;
+ 
+    // First convert the left subtree
+    if (root->left)
+        convertBSTtoDLL(root->left, head, tail);
+ 
+    // Then change left of current root as last node of left subtree
+    root->left = *tail;
+ 
+    // If tail is not NULL, then set right of tail as root, else current
+    // node is head
+    if (*tail)
+        (*tail)->right = root;
+    else
+        *head = root;
+ 
+    // Update tail
+    *tail = root;
+ 
+    // Finally, convert right subtree
+    if (root->right)
+        convertBSTtoDLL(root->right, head, tail);
+}
