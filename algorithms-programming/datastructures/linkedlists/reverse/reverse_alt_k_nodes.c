@@ -14,37 +14,44 @@ Output:   3->2->1->4->5->6->9->8->7->NULL.
 
 
 
-struct node* reverse_alt_k_nodes( struct node *head, int k)
+/* Reverses alternate k nodes and
+   returns the pointer to the new head node */
+struct node *kAltReverse(struct node *head, int k)
 {
-	if ( !head || !k)
-		return;
-
-	int n = k;
-	struct node *current = head;
-	struct node *prev;
-	struct node *next;
-
-	while (current ! = NULL || n < 0)
-	{
-		next = current->next;
-		current->next = prev;
-		prev = current;
-		current = current->next;
-		n--;
-	}
-
-	if ( current != NULL)
-	{	
-		head->next = current;
-		n = k;
-		while ( n-1 > 0 || current != NULL)
-		{
-			current = current->next;
-			n--;
-		}
-		if (current)
-			current->next = reverse_alt_k_nodes(current->next,k)
-	}
-
-	return prev;
+    struct node* current = head;
+    struct node* next;
+    struct node* prev = NULL;
+    int count = 0;   
+ 
+    /*1) reverse first k nodes of the linked list */
+    while (current != NULL && count < k)
+    {
+       next  = current->next;
+       current->next = prev;
+       prev = current;
+       current = next;
+       count++;
+    }
+   
+    /* 2) Now head points to the kth node.  So change next 
+       of head to (k+1)th node*/
+    if(head != NULL)
+      head->next = current;   
+ 
+    /* 3) We do not want to reverse next k nodes. So move the current 
+        pointer to skip next k nodes */
+    count = 0;
+    while(count < k-1 && current != NULL )
+    {
+      current = current->next;
+      count++;
+    }
+ 
+    /* 4) Recursively call for the list starting from current->next.
+       And make rest of the list as next of first node */
+    if(current !=  NULL)
+       current->next = kAltReverse(current->next, k); 
+ 
+    /* 5) prev is new head of the input list */
+    return prev;
 }
