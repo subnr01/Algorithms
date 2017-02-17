@@ -33,49 +33,40 @@ void printarray( int a[],int size)
 }
 
 
-void qsort(int numbers[], int left, int right)
+/* sort arr[left]...arr[right] into increasing order */
+void qsort(int a[], int left_index, int right_index)
 {
-  int pivot, l_hold, r_hold;
+	int left, right, pivot;
+	if(left_index >= right_index) return;
 
-  l_hold = left;
-  r_hold = right;
-  pivot = numbers[left];
-  while (left < right)
-  {
-  printf ("\nfirst\n");
-    printarray(numbers,8);
-  printf ("\nsecond\n");
-     while ((numbers[right] >= pivot) && (left < right))
-      right--;
-    if (left != right)
-    {
-      numbers[left] = numbers[right];
-      left++;
-    }
-    while ((numbers[left] <= pivot) && (left < right))
-      left++;
-    if (left != right)
-    {
-      numbers[right] = numbers[left];
-      right--;
-    }
-  printf ("\nfirst\n");
-      printarray(numbers,8);
-  printf ("\nsecond\n");
-  }
-  numbers[left] = pivot;
-  pivot = left;
-  left = l_hold;
-  right = r_hold;
-  printf ("\n");
-  printarray(numbers,8);
-  printf ("\n");
-  if (left < pivot)
-        qsort(numbers, left, pivot-1);
-  if (right > pivot)
-    qsort(numbers, pivot+1, right);
+	left = left_index;
+	right = right_index;
+
+        // pivot selection
+	pivot = a[(left_index + right_index) /2];
+
+        // partition
+	while(left <= right) {
+		while(a[left] < pivot) left++;
+		while(a[right] > pivot) right--;
+		if(left <= right) {
+			swap(a,left,right);
+			left++; right--;
+		}
+		print(a);		
+	}
+    
+        // recursion
+	qsort(a,left_index,right);
+	qsort(a,left,right_index);
 }
 
+int main()
+{
+	int a[SIZE]={1, 12, 5, 26, 7, 14, 3, 7, 2};
+	print(a);
+	qsort(a,0,SIZE-1);
+}
 void quickSort(int numbers[], int array_size)
 {
   qsort(numbers, 0, array_size - 1);
