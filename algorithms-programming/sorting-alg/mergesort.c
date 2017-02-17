@@ -13,81 +13,60 @@ Merge sort is an O(n log n) comparison based sorting algorithm.
 
 #include<stdio.h>
 
-void move (int *list1, int first1, int last1, int *list2, int first2) {
-  while (first1 <= last1)
-    list2[first2++] = list1[first1++];
-}
-
-
-void printarray ( int *a, int n)
+void merge(int a[], const int low, const int mid, const int high)
 {
-
-	int i=0;
-	printf ( "\n");
-	while ( i < n)
-	{
-		printf ("\t %d ",a[i]);
-		i++;
-	}
-	printf ( "\n");
-}
-
-
-
-void merge (int *A, int first1, int last1, int first2, int last2) {
-  int temp[8];
-  int index, index1, index2;
-  int num;
-
-  index = 0;
-  index1 = first1;
-  index2 = first2;
-
-  printf (" \n a[first1]=%d, first1=%d  first2=%d",A[first1],first1,first2);
-  printf (" \n a[second2]=%d, last1=%d   last2=%d\n",A[last2],last1,last2);
-  num = last1 - first1 + last2 - first2 + 2;
-
-  /*
-   *  Merge the two lists back together until one list runs out of
-   *  items...
-   *
-   */
-
-  while ((index1 <= last1) && (index2 <= last2)) {
-    if (A[index1] < A[index2]) temp[index++] = A[index1++];
-    else temp[index++] = A[index2++];
+  int *temp = new int[high-low+1];
+        
+  int left = low;
+  int right = mid+1;
+  int current = 0;
+  // Merges the two arrays into temp[] 
+  while(left <= mid && right <= high) {
+    if(a[left] <= a[right]) {
+      temp[current] = a[left];
+      left++;
+    }
+    else { // if right element is smaller that the left
+      temp[current] = a[right];  
+      right++;
+    }
+    current++;
   }
 
-  /*
-   *  At which point fill in the merged list with the "rest" of the
-   *  non exhausted list.
-   *
-   */
+  // Completes the array 
 
-  if (index1 > last1)
-    move (A, index2, last2, temp, index);
-  else
-    move (A, index1, last1, temp, index);
-
-
-  /* finally move our merged array in temp space to the real array */
-  move(temp, 0, num-1, A, first1);
-  printf (" \n A[0]=%d, A[num-1]=%d \n",A[0],A[num-1]);
-}
-
-
-
-void merge_sort (int *array, int left, int right) {
-
-  printf ("\n %d , %d \n",array[left], array[right]);
-  if (left < right) {
-    merge_sort (array, left, (left+right)/2);
-    merge_sort (array, (left+right)/2 + 1, right);
-    merge (array, left, (left+right)/2, (left+right)/2+1, right);
-  	printf ( "\n after merge \n");
-  	printarray ( array,8);
-  	printf ( "\n after merge \n");
+        // Extreme example a = 1, 2, 3 || 4, 5, 6
+        // The temp array has already been filled with 1, 2, 3, 
+        // So, the right side of array a will be used to fill temp.
+  if(left > mid) { 
+    for(int i=right; i <= high;i++) {
+      temp[current] = a[i];
+      current++;
+    }
   }
+        // Extreme example a = 6, 5, 4 || 3, 2, 1
+        // The temp array has already been filled with 1, 2, 3
+        // So, the left side of array a will be used to fill temp.
+  else {  
+    for(int i=left; i <= mid; i++) {
+      temp[current] = a[i];
+      current++;
+    }
+  }
+  // into the original array
+  for(int i=0; i<=high-low;i++) {
+                a[i+low] = temp[i];
+  }
+  delete[] temp;
+}
+ 
+void merge_sort(int a[], const int low, const int high)
+{
+  if(low >= high) return;
+  int mid = (low+high)/2;
+  merge_sort(a, low, mid);  //left half
+  merge_sort(a, mid+1, high);  //right half
+  merge(a, low, mid, high);  //merge them
 }
 
 
