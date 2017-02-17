@@ -17,6 +17,7 @@ In worst Case it makes O(n2)comparisions, on average it makes O(nlogn) comparisi
 
 */
 
+//http://www.bogotobogo.com/Algorithms/quicksort.php
 
 
 #include<string.h>
