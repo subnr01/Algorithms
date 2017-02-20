@@ -1,0 +1,21 @@
+
+We do usually think of them as O(1), and I think that's ok because in practice they do average/amortize O(1) and everybody knows what is meant (right?) and they're usually just a small building block in the actual algorithm. Would be pretty annoying if we had to always asterisk the complexity discussion of every algorithm that uses hash tables. But here, the set data structure isn't just a helping part in the actual thing we're building. It is the actual thing. And we're explicitly required to achieve O(1), it's even the problem title. So I think we shouldn't be sloppy here.
+
+
+
+@StefanPochmann In interview setting, it's perfectly reasonable to assume hash table add/delete operations are O(1). Unless you are explicitly asked about the detailed implementation of a hash table, then you should mention that in real world, hash table could degrade to O(n) due to collision (though unlikely if you choose a good hashing algorithm).
+
+Hash table is seen as a basic building block and is used so often to build efficient solution to interview problems. Without assuming the mentioned operations are O(1), most problems which could be solved in hash table efficiently will have the same complexity of brute force approaches.
+
+I think we are all talking about amortized complexities here.
+
+
+
+@StefanPochmann How about if the description is changed to mention amortized O(1)? Does that sound ok?
+I think "average" would be the proper term here.
+
+I see this problem with "amortized": Let's say we somehow managed to create the worst case, i.e., we built a hash table with n elements so that checking for a certain value takes n steps. Then I can ask for that value over and over again and thus it'll take n steps over and over again. So it's not amortized O(1). Unless the hash table reacts to that somehow, i.e., reorganizes itself just because of the checking, not because of any insertions or deletions (because I'm just checking, not inserting or deleting). I don't know whether that's usually done, but I doubt it.
+
+"Average" on the other hand works in a different way. The above shenanigans can of course still happen, but since they're unlikely, they don't hurt the average O(1).
+
+Also, both cppreference.com and cplusplus.com say "average" but not "amortized". Wikipedia's hash table article, in the top-right overview box, also says "average" and not "amortized". The whole article does say "amortized" a few times, but I think that's because it discusses a lot of different hashing ways and aspects, and some of those involve amortized costs. The Python time complexity page also says "average" (only for x in s, it doesn't list add/remove). Java's HashMap page says neither "average" nor "amortized" but does say "assuming the hash function disperses the elements properly", which sounds like average case analysis to me.
